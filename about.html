@@ -1,0 +1,683 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>About Us | Serberlin Global Services</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Learn about Serberlin Global Services - premium paint manufacturer with extensive color palettes.">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="css/icon.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
+    <link rel="stylesheet" href="demos/paint/paint.css" />
+    
+    <style>
+        .navbar-brand span {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #2c3038;
+            letter-spacing: -0.3px;
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                margin-top: 15px;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .header-button {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-section h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .content-section .row {
+                text-align: center;
+            }
+            
+            .content-section img {
+                margin-bottom: 30px;
+            }
+            
+            .pricing-section .col-lg-4 {
+                margin-bottom: 30px;
+            }
+            
+            .team-section .col {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px !important;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+        
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-slider img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .section-spacing {
+            padding: 80px 0;
+        }
+        
+        @media (max-width: 767px) {
+            .section-spacing {
+                padding: 60px 0;
+            }
+        }
+        
+        .active {
+            color: #007bff !important;
+            font-weight: 600;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .mission-values {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 12px;
+            margin: 50px 0;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid #007bff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -13px;
+        }
+        
+        .right::after {
+            left: -13px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body data-mobile-nav-style="classic">
+
+    <header>
+        <nav class="navbar navbar-expand-lg header-light bg-transparent header-reverse glass-effect" data-header-hover="light">
+            <div class="container-fluid">
+                <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                    <a class="navbar-brand" href="index.html" style="text-decoration: none;">
+                        <span>Serberlin Global Services</span>
+                    </a>
+                </div>
+                <div class="col-auto menu-order position-static">
+                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
+                    <div class="header-icon">
+                        <div class="header-button">
+                            <a href="#contact" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-base-color">
+                                <span>
+                                    <span class="btn-double-text" data-text="Get started">Get Started</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="fw-600 ls-minus-2px">About Serberlin Global Services</h1>
+            <p class="mb-0">For over two decades, we've been transforming spaces with our premium paints and extensive color expertise.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="border-bottom border-color-extra-medium-gray section-spacing">
+        <div class="container">
+            <div class="row align-items-center justify-content-md-center">
+                <div class="col-lg-6 col-md-10 text-center text-md-end md-mb-50px" data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#005153&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
+                    <figure class="position-relative m-0">
+                        <img class="lg-w-90 border-radius-8px content-image" src="images/image13.webp" alt="About Serberlin Global Services">
+                    </figure>
+                </div>
+                <div class="col-md-10 col-xl-5 offset-xl-1 col-lg-6" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h3 class="fw-700 text-dark-gray ls-minus-2px">Our Story</h3>
+                    <p class="w-85 lg-w-100 mb-30px">Serberlin Global Services is dedicated to manufacturing high-quality paints that empower you to bring your unique design visions to life. With our wide selection of colors and expertly curated color chart, we make it easy for you to find the perfect shade for any project. Our commitment to quality ensures vibrant, long-lasting results, whether for residential, commercial, or creative spaces.</p>
+                    <p class="w-85 lg-w-100 mb-30px">Founded in 2003, we started as a small local paint manufacturer with a vision to revolutionize the paint industry. Today, we serve clients across the globe, providing premium paint solutions for everything from residential homes to large commercial projects.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <h3 class="fw-700 text-dark-gray ls-minus-2px">Our Mission</h3>
+            <p class="me-6 ms-6 fs-20 lg-w-100 mb-30px text-center">At Serberlin Global Services, we specialize in manufacturing high-quality paints designed to elevate your spaces and bring your design visions to life. Our extensive color chart and palette offer you a wide range of options, ensuring you find the perfect shade for every project. Whether you are renovating your home, updating your office, or working on a large-scale commercial project, our paints deliver lasting durability, vibrant colors, and a flawless finish. Explore our curated collection and discover how our expertise can help you achieve the perfect look for any space.</p>
+        </div>
+
+        <!-- Mission & Values -->
+        <section class="mission-values">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-12">
+                        <h2 class="fw-700 mb-4">Our Values</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon">🎨</div>
+                            <h4 class="fw-600 mb-3">Quality & Innovation</h4>
+                            <p>We continuously innovate to deliver paints that exceed industry standards for durability, coverage, and environmental safety.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon">🌍</div>
+                            <h4 class="fw-600 mb-3">Sustainability</h4>
+                            <p>Our commitment to the environment drives us to develop eco-friendly formulas with low VOC emissions and sustainable sourcing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon">🤝</div>
+                            <h4 class="fw-600 mb-3">Customer Focus</h4>
+                            <p>We build lasting relationships by understanding our clients' needs and providing personalized solutions and expert guidance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Timeline -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-12">
+                        <h2 class="fw-700 text-dark-gray ls-minus-2px">Our Journey</h2>
+                        <p class="fs-18">Two decades of innovation and growth in the paint industry</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h4 class="fw-600">2003</h4>
+                            <p>Serberlin Global Services founded with a small manufacturing facility and a vision for premium paint products.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h4 class="fw-600">2008</h4>
+                            <p>Expanded our color palette to over 500 shades and introduced our first eco-friendly paint line.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h4 class="fw-600">2012</h4>
+                            <p>Opened our second manufacturing plant and began international distribution.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h4 class="fw-600">2016</h4>
+                            <p>Launched our premium commercial-grade paints and established partnerships with major contractors.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h4 class="fw-600">2020</h4>
+                            <p>Introduced our zero-VOC product line and advanced color matching technology.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h4 class="fw-600">2024</h4>
+                            <p>Celebrating 21 years of excellence with over 2,000 color options and global recognition for quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mt-10 team-section">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="fw-700 text-dark-gray ls-minus-2px">Meet Our Team</h2>
+                    <p class="fs-18">The passionate professionals behind our success</p>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="col team-style-08 border-radius-6px md-mb-30px">
+                    <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
+                        <img src="images/demo-corporate-team-01.jpg" alt />
+                        <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
+                            <div class="w-100">
+                                <span class="team-member-name fw-600 text-black d-block">Jeremy dupont</span>
+                                <span class=" fs-15 fw-400 lh-20 text-black d-block">Director</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col team-style-08 border-radius-6px md-mb-30px">
+                    <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
+                        <img src="images/demo-corporate-team-02.jpg" alt />
+                        <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
+                            <div class="w-100">
+                                <span class="team-member-name fw-600 text-black d-block">Jessica dover</span>
+                                <span class=" fs-15 lh-20 fw-400 text-black d-block">Founder</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col team-style-08 border-radius-6px xs-mb-30px">
+                    <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
+                        <img src="images/demo-corporate-team-03.jpg" alt />
+                        <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
+                            <div class="w-100">
+                                <span class="team-member-name fw-600 text-black d-block">Matthew taylor</span>
+                                <span class="fw-400 fs-15 lh-20 text-black d-block">Manager</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col team-style-08 border-radius-6px">
+                    <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
+                        <img src="images/demo-corporate-team-04.jpg" alt />
+                        <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
+                            <div class="w-100">
+                                <span class="team-member-name fw-600 text-black d-block">Johncy parker</span>
+                                <span class="fw-400 fs-15 lh-20 text-black d-block">Manager</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gradient-very-light-gray section-spacing">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="fw-700 text-primary mb-2">21+</h2>
+                        <p class="fw-600">Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="fw-700 text-primary mb-2">2,000+</h2>
+                        <p class="fw-600">Color Options</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="fw-700 text-primary mb-2">50K+</h2>
+                        <p class="fw-600">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="fw-700 text-primary mb-2">15+</h2>
+                        <p class="fw-600">Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-spacing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center mb-2" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h2 class="alt-font text-dark-gray fw-600 ls-minus-2px">Partner With Us</h2>
+                    <span class="fw-600 ls-1px fs-16 alt-font d-inline-block text-uppercase mb-5px text-gray">Ready to transform your space with our premium paints? Contact our team to discuss your project requirements.</span>
+                </div>
+            </div>
+            <div class="row row-cols-md-1 justify-content-center" data-anime="{ &quot;translateY&quot;: [100, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="col-xl-9 col-lg-11">
+                    <form action="contact-form.php" method="post" class="row contact-form-style-02">
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large input-name form-control required" type="text" name="name" placeholder="Your name*" />
+                        </div>
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large form-control required" type="email" name="email" placeholder="Your email address*" />
+                        </div>
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large form-control" type="tel" name="phone" placeholder="Your phone" />
+                        </div>
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large form-control" type="text" name="subject" placeholder="Your subject" />
+                        </div>
+                        <div class="col-md-12 mb-30px">
+                            <textarea class="box-shadow-quadruple-large form-control" cols="40" rows="4" name="comment" placeholder="Your message"></textarea>
+                        </div>
+                        <div class="col-md-7 last-paragraph-no-margin">
+                            <p class="text-center text-md-start fs-16">We are committed to protecting your privacy. We will never collect information about you without your explicit consent.</p>
+                        </div>
+                        <div class="col-md-5 text-center text-md-end sm-mt-20px">
+                            <input type="hidden" name="redirect" value>
+                            <button class="btn btn-medium btn-base-color btn-box-shadow btn-round-edge submit" type="submit">send message</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-results mt-20px d-none"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark bg-footer pt-5 pb-3">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="row justify-content-between align-items-start mb-4">
+                <!-- Navigation Links -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Products</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Color Charts</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Premium Paints</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Industrial Coatings</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Services</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Color Consultation</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Technical Support</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Custom Solutions</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Company</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-text-primary">About Us</a></li>
+                                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-text-primary">Our Team</a></li>
+                                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-text-primary">Blog</a></li>
+                                <li class="mb-2"><a href="gallery.html" class="text-light text-decoration-none hover-text-primary">Gallery</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-6 col-sm-4 col-lg-3 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Support</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#contact" class="text-light text-decoration-none hover-text-primary">Contact Us</a></li>
+                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">FAQs</a></li>
+                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">Shipping Info</a></li>
+                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">Returns</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-12 col-sm-8 col-lg-3 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Contact Info</h6>
+                            <div class="text-light">
+                                <p class="mb-2">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    123 Paint Street, Color City
+                                </p>
+                                <p class="mb-2">
+                                    <i class="fas fa-phone me-2"></i>
+                                    +1 (555) 123-4567
+                                </p>
+                                <p class="mb-2">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    info@serberlin.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h6 class="text-white fw-600 mb-3">Stay Updated</h6>
+                    <p class="text-light mb-3">Subscribe to our newsletter for the latest color trends and offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address" aria-label="Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Media & Divider -->
+            <div class="row align-items-center py-3 border-top border-light">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="elements-social social-icon-style-02">
+                        <ul class="small-icon light list-inline mb-0">
+                            <li class="list-inline-item me-3">
+                                <a class="facebook" href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a class="dribbble" href="http://www.dribbble.com/" target="_blank" aria-label="Dribbble">
+                                    <i class="fa-brands fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a class="twitter" href="https://www.twitter.com/" target="_blank" aria-label="Twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="instagram" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-light mb-0">Follow us for inspiration and updates</p>
+                </div>
+            </div>
+            
+            <!-- Copyright & Legal -->
+            <div class="row align-items-center pt-3 border-top border-light">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="text-light mb-0">&copy; 2024 Serberlin Global Services. All rights reserved.</p>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-3">
+                            <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item me-3">
+                            <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DND93RJKBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DND93RJKBT');
+    </script>
+</body>
+</html>

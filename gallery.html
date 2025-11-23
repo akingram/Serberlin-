@@ -1,0 +1,672 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Gallery | Serberlin Global Services</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Explore our paint gallery showcasing beautiful color applications and finished projects.">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="css/icon.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
+    <link rel="stylesheet" href="demos/paint/paint.css" />
+    
+    <style>
+        .navbar-brand span {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #2c3038;
+            letter-spacing: -0.3px;
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                margin-top: 15px;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .header-button {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-section h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .content-section .row {
+                text-align: center;
+            }
+            
+            .content-section img {
+                margin-bottom: 30px;
+            }
+            
+            .pricing-section .col-lg-4 {
+                margin-bottom: 30px;
+            }
+            
+            .team-section .col {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px !important;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+        
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-slider img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .section-spacing {
+            padding: 80px 0;
+        }
+        
+        @media (max-width: 767px) {
+            .section-spacing {
+                padding: 60px 0;
+            }
+        }
+        
+        .active {
+            color: #007bff !important;
+            font-weight: 600;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+
+<body data-mobile-nav-style="classic">
+
+    <header>
+        <nav class="navbar navbar-expand-lg header-light bg-transparent header-reverse glass-effect" data-header-hover="light">
+            <div class="container-fluid">
+                <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                    <a class="navbar-brand" href="index.html" style="text-decoration: none;">
+                        <span>Serberlin Global Services</span>
+                    </a>
+                </div>
+                <div class="col-auto menu-order position-static">
+                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
+                    <div class="header-icon">
+                        <div class="header-button">
+                            <a href="#contact" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-base-color">
+                                <span>
+                                    <span class="btn-double-text" data-text="Get started">Get Started</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Gallery Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="fw-600 ls-minus-2px">Our Color Gallery</h1>
+            <p class="mb-0">Explore our extensive collection of paint applications and color transformations across residential, commercial, and industrial projects.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="background-position-center-top position-relative section-spacing">
+        <div id="particles-02" data-particle="true" data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 3,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 1000}},&quot;color&quot;:{&quot;value&quot;:[&quot;#ff5b74&quot;, &quot;#820f89&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.7,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 2,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 7,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:2,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}" class="position-absolute top-0px left-0px w-100 z-index-minus-1"></div>
+        <div class="container">
+            <div class="row align-items-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="col-lg-6 position-relative md-mb-14 sm-mb-17 xs-mb-23">
+                    <div class="w-70 md-w-75 xs-w-90" data-animation-delay="50" data-shadow-animation="true">
+                        <img src="images/image9.jpeg" alt class="border-radius-8px w-100">
+                    </div>
+                    <div class="w-55 overflow-hidden position-absolute right-15px xs-w-60 bottom-minus-20px" data-shadow-animation="true" data-animation-delay="250" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
+                        <img src="images/image10.jpeg" alt class="border-radius-8px w-100 box-shadow-quadruple-large" />
+                    </div>
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-lg-start">
+                    <h3 class="fw-600 text-dark-gray ls-minus-2px">Discover Premium Paints for Inspired Spaces</h3>
+                    <p class="mb-40px xs-mb-30px w-90 lg-w-95 md-w-100">There are many variations of passages of available but the majority have suffered alteration some form by humou words which don't look believable.</p>
+                    <div class="row align-items-center mb-30px xs-mb-25px justify-content-center justify-content-lg-start">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="section-spacing">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="industrial">Industrial</button>
+                <button class="filter-btn" data-filter="exterior">Exterior</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="residential">
+                    <img src="images/image4.jpeg" alt="Modern Living Room">
+                    <div class="gallery-caption">
+                        <h4>Modern Living Room</h4>
+                        <p>Warm neutral tones creating a cozy atmosphere</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="commercial">
+                    <img src="images/image5.jpeg" alt="Office Space">
+                    <div class="gallery-caption">
+                        <h4>Corporate Office</h4>
+                        <p>Professional color scheme for productivity</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="residential">
+                    <img src="images/image6.jpeg" alt="Bedroom Design">
+                    <div class="gallery-caption">
+                        <h4>Serene Bedroom</h4>
+                        <p>Calming blues and soft whites for relaxation</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior">
+                    <img src="images/image7.jpeg" alt="House Exterior">
+                    <div class="gallery-caption">
+                        <h4>Home Exterior</h4>
+                        <p>Durable exterior paint with elegant finish</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="industrial">
+                    <img src="images/image8.jpeg" alt="Factory Interior">
+                    <div class="gallery-caption">
+                        <h4>Industrial Facility</h4>
+                        <p>Heavy-duty coatings for industrial environments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="commercial">
+                    <img src="images/image9.jpeg" alt="Retail Store">
+                    <div class="gallery-caption">
+                        <h4>Retail Space</h4>
+                        <p>Vibrant colors to attract customers</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="residential">
+                    <img src="images/image10.webp" alt="Kitchen Renovation">
+                    <div class="gallery-caption">
+                        <h4>Kitchen Makeover</h4>
+                        <p>Bright whites with accent colors</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior">
+                    <img src="images/image11.webp" alt="Building Facade">
+                    <div class="gallery-caption">
+                        <h4>Commercial Building</h4>
+                        <p>Weather-resistant exterior coating</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="industrial">
+                    <img src="images/image12.webp" alt="Warehouse">
+                    <div class="gallery-caption">
+                        <h4>Warehouse Interior</h4>
+                        <p>Industrial-grade protective coatings</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="residential">
+                    <img src="images/image13.webp" alt="Bathroom Design">
+                    <div class="gallery-caption">
+                        <h4>Spa-like Bathroom</h4>
+                        <p>Moisture-resistant paints in soothing tones</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="commercial">
+                    <img src="images/demo-corporate-customer-stories-01.jpg" alt="Hotel Lobby">
+                    <div class="gallery-caption">
+                        <h4>Hotel Interior</h4>
+                        <p>Luxurious finishes for hospitality spaces</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior">
+                    <img src="images/demo-product-showcase-rev-slider-02.jpg" alt="Architectural Detail">
+                    <div class="gallery-caption">
+                        <h4>Architectural Feature</h4>
+                        <p>Custom color matching for unique designs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Inspiration Section -->
+    <section class="bg-gradient-very-light-gray section-spacing">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="fw-700 text-dark-gray ls-minus-2px">Color Inspiration</h2>
+                    <p class="fs-18">Discover trending color palettes and combinations that transform ordinary spaces into extraordinary environments.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="color-palette-card bg-white border-radius-8px p-4 text-center box-shadow-quadruple-large">
+                        <div class="color-swatches d-flex mb-3">
+                            <div class="color-swatch" style="background-color: #2c3e50; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #34495e; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #7f8c8d; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #bdc3c7; height: 60px; flex: 1;"></div>
+                        </div>
+                        <h4 class="fw-600">Urban Neutrals</h4>
+                        <p class="mb-0">Sophisticated grays for modern urban spaces</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="color-palette-card bg-white border-radius-8px p-4 text-center box-shadow-quadruple-large">
+                        <div class="color-swatches d-flex mb-3">
+                            <div class="color-swatch" style="background-color: #e74c3c; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #e67e22; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #f1c40f; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #2ecc71; height: 60px; flex: 1;"></div>
+                        </div>
+                        <h4 class="fw-600">Vibrant Accents</h4>
+                        <p class="mb-0">Bold colors to energize any space</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="color-palette-card bg-white border-radius-8px p-4 text-center box-shadow-quadruple-large">
+                        <div class="color-swatches d-flex mb-3">
+                            <div class="color-swatch" style="background-color: #3498db; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #2980b9; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #1abc9c; height: 60px; flex: 1;"></div>
+                            <div class="color-swatch" style="background-color: #16a085; height: 60px; flex: 1;"></div>
+                        </div>
+                        <h4 class="fw-600">Coastal Blues</h4>
+                        <p class="mb-0">Serene blues inspired by ocean and sky</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-spacing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center mb-2" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h2 class="alt-font text-dark-gray fw-600 ls-minus-2px">Inspired by Our Gallery?</h2>
+                    <span class="fw-600 ls-1px fs-16 alt-font d-inline-block text-uppercase mb-5px text-gray">Let us help bring your vision to life with our premium paints and expert color consultation services.</span>
+                </div>
+            </div>
+            <div class="row row-cols-md-1 justify-content-center" data-anime="{ &quot;translateY&quot;: [100, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="col-xl-9 col-lg-11">
+                    <form action="contact-form.php" method="post" class="row contact-form-style-02">
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large input-name form-control required" type="text" name="name" placeholder="Your name*" />
+                        </div>
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large form-control required" type="email" name="email" placeholder="Your email address*" />
+                        </div>
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large form-control" type="tel" name="phone" placeholder="Your phone" />
+                        </div>
+                        <div class="col-md-6 mb-30px">
+                            <input class="box-shadow-quadruple-large form-control" type="text" name="subject" placeholder="Project Type" />
+                        </div>
+                        <div class="col-md-12 mb-30px">
+                            <textarea class="box-shadow-quadruple-large form-control" cols="40" rows="4" name="comment" placeholder="Tell us about your project and color preferences"></textarea>
+                        </div>
+                        <div class="col-md-7 last-paragraph-no-margin">
+                            <p class="text-center text-md-start fs-16">We are committed to protecting your privacy. We will never collect information about you without your explicit consent.</p>
+                        </div>
+                        <div class="col-md-5 text-center text-md-end sm-mt-20px">
+                            <input type="hidden" name="redirect" value>
+                            <button class="btn btn-medium btn-base-color btn-box-shadow btn-round-edge submit" type="submit">Get Color Consultation</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-results mt-20px d-none"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark bg-footer pt-5 pb-3">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="row justify-content-between align-items-start mb-4">
+                <!-- Navigation Links -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Products</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Color Charts</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Premium Paints</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Industrial Coatings</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Services</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Color Consultation</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Technical Support</a></li>
+                                <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Custom Solutions</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-6 col-sm-4 col-lg-2 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Company</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-text-primary">About Us</a></li>
+                                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-text-primary">Our Team</a></li>
+                                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-text-primary">Blog</a></li>
+                                <li class="mb-2"><a href="gallery.html" class="text-light text-decoration-none hover-text-primary">Gallery</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-6 col-sm-4 col-lg-3 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Support</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#contact" class="text-light text-decoration-none hover-text-primary">Contact Us</a></li>
+                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">FAQs</a></li>
+                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">Shipping Info</a></li>
+                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">Returns</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-12 col-sm-8 col-lg-3 mb-4">
+                            <h6 class="text-white fw-600 mb-3">Contact Info</h6>
+                            <div class="text-light">
+                                <p class="mb-2">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    123 Paint Street, Color City
+                                </p>
+                                <p class="mb-2">
+                                    <i class="fas fa-phone me-2"></i>
+                                    +1 (555) 123-4567
+                                </p>
+                                <p class="mb-2">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    info@serberlin.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h6 class="text-white fw-600 mb-3">Stay Updated</h6>
+                    <p class="text-light mb-3">Subscribe to our newsletter for the latest color trends and offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address" aria-label="Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Media & Divider -->
+            <div class="row align-items-center py-3 border-top border-light">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="elements-social social-icon-style-02">
+                        <ul class="small-icon light list-inline mb-0">
+                            <li class="list-inline-item me-3">
+                                <a class="facebook" href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a class="dribbble" href="http://www.dribbble.com/" target="_blank" aria-label="Dribbble">
+                                    <i class="fa-brands fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a class="twitter" href="https://www.twitter.com/" target="_blank" aria-label="Twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="instagram" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-light mb-0">Follow us for inspiration and updates</p>
+                </div>
+            </div>
+            
+            <!-- Copyright & Legal -->
+            <div class="row align-items-center pt-3 border-top border-light">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="text-light mb-0">&copy; 2024 Serberlin Global Services. All rights reserved.</p>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-3">
+                            <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item me-3">
+                            <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DND93RJKBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DND93RJKBT');
+    </script>
+</body>
+</html>
