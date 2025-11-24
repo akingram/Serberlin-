@@ -129,6 +129,62 @@
             .navbar-brand span {
                 font-size: 1.5rem;
             }
+            
+            /* Mobile-specific fixes for normal text */
+            .tp-caption.alt-font,
+            .tp-caption.tp-resizeme.alt-font {
+                background: none !important;
+                -webkit-background-clip: initial !important;
+                -webkit-text-fill-color: initial !important;
+                color: #333 !important;
+                text-shadow: none !important;
+            }
+            
+            /* Normalize buttons on mobile */
+            .btn {
+                font-size: 1rem !important;
+                font-weight: 500 !important;
+                padding: 10px 20px !important;
+                border-radius: 4px !important;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+                background-color: #4a5568 !important;
+                color: white !important;
+                border: none !important;
+            }
+            
+            .hero-buttons .btn {
+                width: auto !important;
+                display: inline-block !important;
+            }
+            
+            /* Remove complex animations on mobile */
+            [data-anime] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            
+            /* Simplify slider text */
+            #slide-layer-1 {
+                background: none !important;
+                -webkit-background-clip: initial !important;
+                -webkit-text-fill-color: initial !important;
+                color: #333 !important;
+                font-weight: 700 !important;
+            }
+            
+            /* Fix play button */
+            .play-video-botton {
+                background-color: #ffffff !important;
+                color: #2c3038 !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+            }
+            
+            .play-video-botton i {
+                background: none !important;
+                -webkit-background-clip: initial !important;
+                -webkit-text-fill-color: initial !important;
+                color: #4a5568 !important;
+            }
         }
         
         @media (max-width: 575px) {
@@ -151,6 +207,17 @@
             
             h3 {
                 font-size: 1.5rem;
+            }
+            
+            /* Further simplify for very small screens */
+            .tp-caption {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .btn {
+                font-size: 0.9rem !important;
+                padding: 8px 16px !important;
             }
         }
         
