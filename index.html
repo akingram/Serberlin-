@@ -79,6 +79,70 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         
+        /* FAQ Section Styles */
+        .faq-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .faq-title {
+            color: #2c3038;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .accordion-button {
+            background-color: white;
+            color: #2c3038;
+            font-weight: 600;
+            padding: 20px 25px;
+            font-size: 1.1rem;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #4a5568;
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+        
+        .accordion-body {
+            padding: 20px 25px;
+            background-color: white;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232c3038'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .faq-contact {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
         @media (max-width: 991px) {
             .navbar-collapse {
                 margin-top: 15px;
@@ -107,6 +171,10 @@
             
             h3 {
                 font-size: 1.75rem;
+            }
+            
+            .faq-section {
+                padding: 60px 0;
             }
         }
         
@@ -503,6 +571,163 @@
                 <div class="col-md-10 col-xl-5 offset-xl-1 col-lg-6" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                     <h3 class="fw-700 text-dark-gray ls-minus-2px">Expert Support to Realize Your Design Ideas</h3>
                     <p class="w-85 lg-w-100 mb-30px">We're more than just a paint manufacturer—Serberlin Global Services is your creative partner. Our team is dedicated to helping you bring your design visions to life, offering expert advice on color selection and application techniques. From the initial idea to the final brushstroke, we support you every step of the way. With our resources and personalized guidance, you can confidently choose the right products to achieve the exact mood and aesthetic you envision for your space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-spacing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="faq-title alt-font fw-600 ls-minus-2px">Frequently Asked Questions</h2>
+                    <p class="w-85 mx-auto">Find answers to common questions about our premium paints, color selection process, and services. If you don't see what you're looking for, feel free to contact us directly.</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                            <h3 class="accordion-header" id="faqHeading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                    How do I choose the right paint colour for my home?
+                                </button>
+                            </h3>
+                            <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Like any other decision, when you want to decide the right colour palette for your home, you need to start with practical considerations. In this case, they are the size of the room, the amount of sunlight the room gets, what the room will be used for, and of course, your budget.</p>
+                                    <p>Next, you come to your paint colour preferences. Do you like dark paint colours for home or are you looking for the best light colour for home? Each one of the above details will decide the colour code you should go for.</p>
+                                    <p>For example, let's assume you want to select the right wall paint colour for your bedroom. The room is relatively big with a medium-sized window. In this case, you can explore the darker bedroom Berger paints colour shades for one wall combined with lighter colours for the other three.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 50, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                            <h3 class="accordion-header" id="faqHeading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    What types of paint finishes do you offer?
+                                </button>
+                            </h3>
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We offer a wide range of paint finishes to suit different needs and preferences:</p>
+                                    <ul>
+                                        <li><strong>Matte/Flat:</strong> Non-reflective finish that hides surface imperfections well, ideal for ceilings and low-traffic areas.</li>
+                                        <li><strong>Eggshell:</strong> Low-sheen finish with good durability, perfect for living rooms and bedrooms.</li>
+                                        <li><strong>Satin:</strong> Soft sheen that's easy to clean, great for kitchens, bathrooms, and trim.</li>
+                                        <li><strong>Semi-Gloss:</strong> Reflective and highly durable, excellent for high-moisture areas and trim work.</li>
+                                        <li><strong>High-Gloss:</strong> Maximum shine and durability, perfect for doors, cabinets, and furniture.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                            <h3 class="accordion-header" id="faqHeading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                    How long does your paint typically last?
+                                </button>
+                            </h3>
+                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Our premium paints are formulated for exceptional durability and longevity. When applied correctly to properly prepared surfaces, our interior paints typically last 5-10 years before needing a refresh, while our exterior paints can maintain their appearance and protective qualities for 7-15 years depending on environmental conditions.</p>
+                                    <p>Factors that affect paint longevity include:</p>
+                                    <ul>
+                                        <li>Surface preparation</li>
+                                        <li>Application technique</li>
+                                        <li>Environmental exposure (sunlight, moisture, temperature fluctuations)</li>
+                                        <li>Quality of primer used</li>
+                                        <li>Number of coats applied</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 150, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                            <h3 class="accordion-header" id="faqHeading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                    Do you offer custom color matching?
+                                </button>
+                            </h3>
+                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes, we offer professional custom color matching services. If you have a specific color in mind that isn't in our standard palette, bring us a sample (such as a fabric swatch, photo, or existing paint chip) and our experts can create a perfect match using our advanced color matching technology.</p>
+                                    <p>Our custom color matching service includes:</p>
+                                    <ul>
+                                        <li>Precise digital color analysis</li>
+                                        <li>Multiple sample adjustments to ensure accuracy</li>
+                                        <li>Test patches to verify the match in your lighting</li>
+                                        <li>Documentation of your custom color formula for future reference</li>
+                                    </ul>
+                                    <p>Please note that custom colors may require a minimum order quantity and additional lead time.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                            <h3 class="accordion-header" id="faqHeading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                    What is the coverage area per gallon of your paint?
+                                </button>
+                            </hh3>
+                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Coverage can vary depending on the surface texture, porosity, and application method, but as a general guideline:</p>
+                                    <ul>
+                                        <li>Our interior paints typically cover 350-400 square feet per gallon for the first coat on properly prepared surfaces.</li>
+                                        <li>Our exterior paints generally cover 250-350 square feet per gallon, depending on surface texture.</li>
+                                        <li>Primers typically cover 200-300 square feet per gallon, as they're designed to penetrate and seal surfaces.</li>
+                                    </ul>
+                                    <p>For best results, we recommend:</p>
+                                    <ul>
+                                        <li>Proper surface preparation (cleaning, sanding, and priming when necessary)</li>
+                                        <li>Using high-quality brushes and rollers</li>
+                                        <li>Applying two thin coats rather than one thick coat</li>
+                                        <li>Following the specific product instructions for optimal coverage</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 6 -->
+                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 250, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                            <h3 class="accordion-header" id="faqHeading6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                    Are your paints environmentally friendly?
+                                </button>
+                            </h3>
+                            <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes, we are committed to environmental responsibility and offer a range of eco-friendly paint options:</p>
+                                    <ul>
+                                        <li><strong>Low-VOC and Zero-VOC Paints:</strong> Our premium interior lines contain minimal or no volatile organic compounds, improving indoor air quality.</li>
+                                        <li><strong>Water-Based Formulas:</strong> Most of our products are water-based, making cleanup easier and reducing environmental impact.</li>
+                                        <li><strong>Sustainable Packaging:</strong> We use recycled materials in our packaging and offer recycling programs for empty containers.</li>
+                                        <li><strong>Green Manufacturing:</strong> Our production processes prioritize energy efficiency and waste reduction.</li>
+                                    </ul>
+                                    <p>Look for our "EcoChoice" label to easily identify our most environmentally responsible products. Our staff can help you select the right eco-friendly option for your project.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact CTA -->
+                    <div class="faq-contact" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="text-dark-gray mb-3">Still have questions?</h3>
+                        <p class="mb-4">Our paint experts are here to help you with any questions about color selection, application techniques, or product specifications.</p>
+                        <a href="#contact" class="btn btn-medium btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge" style="background-color: #4a5568; padding: 15px 35px;">
+                            <span>
+                                <span class="btn-text">Contact Our Experts</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
