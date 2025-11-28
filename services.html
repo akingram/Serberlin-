@@ -145,6 +145,216 @@
             margin: 0 auto;
             font-family: Arial, sans-serif;
         }
+        
+        /* Enhanced Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .service-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3038;
+        }
+        
+        .service-description {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Enhanced Booking Section */
+        .booking-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            color: #333;
+        }
+        
+        .booking-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3038;
+        }
+        
+        .booking-subtitle {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        
+        .booking-form {
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3038;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e1e5eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            outline: none;
+        }
+        
+        .booking-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .booking-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Enhanced Client Section */
+        .client-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .client-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .client-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #2c3038;
+        }
+        
+        .client-location {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        /* Enhanced Quality Section */
+        .quality-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .quality-content {
+            padding-right: 50px;
+        }
+        
+        .quality-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .quality-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+        
+        .quality-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3038;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -178,9 +388,9 @@
                 <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
                     <div class="header-icon">
                         <div class="header-button">
-                            <a href="#contact" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-base-color">
+                            <a href="#booking" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-base-color">
                                 <span>
-                                    <span class="btn-double-text" data-text="Get started">Get Started</span>
+                                    <span class="btn-double-text" data-text="Book Now">Book Now</span>
                                 </span>
                             </a>
                         </div>
@@ -199,179 +409,186 @@
     </section>
 
     <!-- Services Section -->
-    <section class="bg-gradient-very-light-gray position-relative pb-2 section-spacing">
-        <div class="background-position-center-top position-absolute top-0 left-0px w-100 h-100"></div>
-        <div class="container position-relative">
-             <div class="text-center mt-5">
-                  <p class="me-6 ms-6 fs-20 lg-w-100 mb-30px text-center">We work with both builders and individual clients, viewing every customer relationship as an opportunity to demonstrate the transformative power of our craft.</p>
-                  <h3 class="fw-700 text-dark-gray ls-minus-2px">Our Scope of Services</h3>
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Comprehensive Services</h2>
+                <p class="section-subtitle">We work with both builders and individual clients, viewing every customer relationship as an opportunity to demonstrate the transformative power of our craft.</p>
             </div>
             
-            <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center mb-9 lg-mb-7" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <div class="col icon-with-text-style-04 transition-inner-all md-mb-30px">
-                    <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-5 lg-p-13 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                        <div class="feature-box-icon mb-40px lg-mb-30px">
-                            <img class="h-70px" src="images/demo-seo-application-icon-01.png" alt>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-roller"></i>
                         </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Building (Decorative Paint)</span>
-                            <p>We produce and supply high-quality decorative paints for both internal and external applications. Our comprehensive after-sales services ensure complete customer satisfaction and long-lasting results for residential and commercial projects.</p>
-                        </div>
+                        <h3 class="service-title">Building (Decorative Paint)</h3>
+                        <p class="service-description">We produce and supply high-quality decorative paints for both internal and external applications. Our comprehensive after-sales services ensure complete customer satisfaction.</p>
+                        <a href="#contact" class="btn btn-medium btn-base-color btn-round-edge">Learn More</a>
                     </div>
                 </div>
-
-                <div class="col icon-with-text-style-04 transition-inner-all md-mb-30px">
-                    <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-5 lg-p-13 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                        <div class="feature-box-icon mb-40px lg-mb-30px">
-                            <img class="h-70px" src="images/demo-seo-application-icon-02.png" alt>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-industry"></i>
                         </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Industrial Paint</span>
-                            <p>Specialized painting services for industrial machinery and equipment. We also provide high-quality road marking paint for transportation infrastructure projects, ensuring durability and visibility in all weather conditions.</p>
-                        </div>
+                        <h3 class="service-title">Industrial Paint</h3>
+                        <p class="service-description">Specialized painting services for industrial machinery and equipment. We also provide high-quality road marking paint for transportation infrastructure projects.</p>
+                        <a href="#contact" class="btn btn-medium btn-base-color btn-round-edge">Learn More</a>
                     </div>
                 </div>
-
-                <div class="col icon-with-text-style-04 transition-inner-all md-mb-30px">
-                    <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-5 lg-p-13 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                        <div class="feature-box-icon mb-40px lg-mb-30px">
-                            <img class="h-70px" src="images/demo-seo-application-icon-03.png" alt>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-flask"></i>
                         </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Chemical Solutions</span>
-                            <p>Comprehensive chemical services including industrial chemicals for various applications, water treatment chemicals for purification systems, and agro-allied chemicals to support agricultural productivity and efficiency.</p>
-                        </div>
+                        <h3 class="service-title">Chemical Solutions</h3>
+                        <p class="service-description">Comprehensive chemical services including industrial chemicals, water treatment chemicals, and agro-allied chemicals to support various industries.</p>
+                        <a href="#contact" class="btn btn-medium btn-base-color btn-round-edge">Learn More</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="row align-items-center justify-content-center mb-6 md-mb-8 pricing-section">
-                <div class="col-lg-4 col-md-8 pricing-table-style-08 md-mb-30px" data-anime="{ &quot;translateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="pricing-table text-center pt-16 pb-35px bg-white box-shadow-quadruple-large border-radius-6px">
-                        <div class="pricing-header ps-18 pe-18 md-ps-12 md-pe-12">
-                            <div class="d-inline-block fs-12 text-uppercase bg-white ps-20px pe-20px fw-600 text-dark-gray mb-30px border-radius-100px box-shadow-large border border-1 border-color-extra-medium-gray">Decorative Paints</div>
-                            <h2 class="text-dark-gray fw-200 mb-10px ls-minus-3px">Premium Quality</h2>
-                            <p class="mb-25px lh-28">High-quality decorative paints for residential and commercial buildings.</p>
-                            <span class="fs-13 w-100 d-block mt-5px">Product Range</span>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-check"></i>
                         </div>
-                        <div class="pricing-body pt-15px pb-25px">
-                            <ul class="list-style-01 ps-0 mb-0">
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Acrylic Emulsion (Premium & Standard)</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Satin Emulsion (Satin Finish)</li>
-                                <li class="border-color-transparent-dark-very-light border-bottom pt-10px pb-10px">Gloss Paint</li>
-                                <li class="border-color-transparent-dark-very-light border-bottom pt-10px pb-10px">Silk Finish</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <a href="#contact" class="btn btn-large btn-base-color btn-round-edge btn-switch-text btn-box-shadow">
-                                <span>
-                                    <span class="btn-double-text" data-text="Inquire Now">Inquire Now</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-8 pricing-table-style-08 md-mb-30px" data-anime="{ &quot;translateX&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="pricing-table text-center pt-16 pb-35px bg-white box-shadow-quadruple-large border-radius-6px">
-                        <div class="pricing-header ps-18 pe-18 md-ps-12 md-pe-12">
-                            <div class="d-inline-block fs-12 text-uppercase bg-white ps-20px pe-20px fw-600 text-dark-gray mb-30px border-radius-100px box-shadow-large border border-1 border-color-extra-medium-gray">Industrial Solutions</div>
-                            <h2 class="text-dark-gray fw-200 mb-10px ls-minus-3px">Specialized Coatings</h2>
-                            <p class="mb-25px lh-28">Professional-grade solutions for industrial and specialized applications.</p>
-                            <span class="fs-13 w-100 d-block mt-5px">Product Range</span>
-                        </div>
-                        <div class="pricing-body pt-15px pb-25px">
-                            <ul class="list-style-01 ps-0 mb-0">
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Road Marking Paint (Reflective & Non-Reflective)</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Marine Coating</li>
-                                 <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Auto Paint</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Machinery Enamel</li>
-                                 <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Thinner (Alkyd, Epoxy, Chlorinated)</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <a href="#contact" class="btn btn-large btn-base-color btn-round-edge btn-switch-text btn-box-shadow">
-                                <span>
-                                    <span class="btn-double-text" data-text="Get Quote">Get Quote</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-8 pricing-table-style-08" data-anime="{ &quot;translateX&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="pricing-table text-center pt-16 pb-35px bg-white box-shadow-quadruple-large border-radius-6px">
-                        <div class="pricing-header ps-18 pe-18 md-ps-12 md-pe-12">
-                            <div class="d-inline-block fs-12 text-uppercase bg-white ps-20px pe-20px fw-600 text-dark-gray mb-30px border-radius-100px box-shadow-large border border-1 border-color-extra-medium-gray">Chemical Products</div>
-                            <h2 class="text-dark-gray fw-200 mb-10px ls-minus-3px">Industrial Chemicals</h2>
-                            <p class="mb-25px lh-28">Comprehensive chemical solutions for various industrial applications.</p>
-                            <span class="fs-13 w-100 d-block mt-5px">Chemical Categories</span>
-                        </div>
-                        <div class="pricing-body pt-15px pb-25px">
-                            <ul class="list-style-01 ps-0 mb-0">
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Industrial Chemicals</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Water Treatment Chemicals</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Agro-allied Chemicals</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Custom Chemical Solutions</li>
-                                <li class="border-color-transparent-dark-very-light pt-10px pb-10px">Technical Support</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <a href="#contact" class="btn btn-large btn-base-color btn-round-edge btn-switch-text btn-box-shadow">
-                                <span>
-                                    <span class="btn-double-text" data-text="Contact Us">Contact Us</span>
-                                </span>
-                            </a>
-                        </div>
+                        <h3 class="service-title">Consultation & Planning</h3>
+                        <p class="service-description">Expert consultation services for your projects. We help plan, design, and execute painting and chemical solutions tailored to your specific needs.</p>
+                        <a href="#contact" class="btn btn-medium btn-base-color btn-round-edge">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Clients Section -->
-    <section class="section-spacing bg-white">
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5">
-                    <h2 class="fw-700 text-dark-gray ls-minus-2px mb-4">Our Valued Clients</h2>
-                    <p class="fs-18">We are proud to serve a diverse range of clients across various sectors in Nigeria</p>
-                </div>
+            <div class="booking-container">
+                <h2 class="booking-title">Book Our Services</h2>
+                <p class="booking-subtitle">Schedule a consultation, site visit, or project assessment with our experts</p>
+                
+                <form class="booking-form" id="bookingForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="bookingName">Full Name *</label>
+                                <input type="text" id="bookingName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="bookingEmail">Email Address *</label>
+                                <input type="email" id="bookingEmail" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="bookingPhone">Phone Number *</label>
+                                <input type="tel" id="bookingPhone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="bookingService">Service Interested In *</label>
+                                <select id="bookingService" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="decorative-paint">Decorative Paint</option>
+                                    <option value="industrial-paint">Industrial Paint</option>
+                                    <option value="chemical-solutions">Chemical Solutions</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="site-visit">Site Visit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="bookingDate">Preferred Date</label>
+                                <input type="date" id="bookingDate" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="bookingTime">Preferred Time</label>
+                                <select id="bookingTime" class="form-control">
+                                    <option value="">Select time</option>
+                                    <option value="morning">Morning (9am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 6pm)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="bookingMessage">Project Details</label>
+                        <textarea id="bookingMessage" class="form-control" rows="4" placeholder="Please provide any additional information about your project or requirements"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="booking-btn">Submit Booking Request</button>
+                </form>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="row text-center">
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="client-logo-box p-4 border-radius-6px bg-very-light-gray">
-                                <h5 class="fw-600">Ikeja Electric</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="client-logo-box p-4 border-radius-6px bg-very-light-gray">
-                                <h5 class="fw-600">Nigerian Aviation Handling Company Plc</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="client-logo-box p-4 border-radius-6px bg-very-light-gray">
-                                <h5 class="fw-600">Haggai Savings and Loans Limited</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="client-logo-box p-4 border-radius-6px bg-very-light-gray">
-                                <h5 class="fw-600">Okitipupa Local Government Council</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="client-logo-box p-4 border-radius-6px bg-very-light-gray">
-                                <h5 class="fw-600">Ondo State Schools</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="client-logo-box p-4 border-radius-6px bg-very-light-gray">
-                                <h5 class="fw-600">Individual Projects</h5>
-                                <p class="small mb-0">Victoria Garden City - Lagos, Ode Aye - Ondo State</p>
-                            </div>
-                        </div>
+        </div>
+    </section>
+
+    <!-- Our Clients Section -->
+    <section class="client-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Valued Clients</h2>
+                <p class="section-subtitle">We are proud to serve a diverse range of clients across various sectors in Nigeria</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="client-card">
+                        <h4 class="client-name">Ikeja Electric</h4>
+                        <p class="client-location">Lagos, Nigeria</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="client-card">
+                        <h4 class="client-name">Nigerian Aviation Handling Company Plc</h4>
+                        <p class="client-location">Nationwide</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="client-card">
+                        <h4 class="client-name">Haggai Savings and Loans Limited</h4>
+                        <p class="client-location">Lagos, Nigeria</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="client-card">
+                        <h4 class="client-name">Okitipupa Local Government Council</h4>
+                        <p class="client-location">Ondo State, Nigeria</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="client-card">
+                        <h4 class="client-name">Ondo State Schools</h4>
+                        <p class="client-location">Ondo State, Nigeria</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="client-card">
+                        <h4 class="client-name">Individual Projects</h4>
+                        <p class="client-location">Victoria Garden City - Lagos, Ode Aye - Ondo State</p>
                     </div>
                 </div>
             </div>
@@ -379,23 +596,25 @@
     </section>
 
     <!-- Quality Assurance Section -->
-    <section class="bg-gradient-very-light-gray section-spacing">
+    <section class="quality-section">
         <div class="container">
-            <div class="row align-items-center justify-content-md-center">
-                <div class="col-lg-6 col-md-10 text-center text-md-end md-mb-50px" data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#005153&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
-                    <figure class="position-relative m-0">
-                        <img class="lg-w-90 border-radius-8px content-image" src="images/image7.jpeg" alt="Quality Control">
-                    </figure>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="quality-content">
+                        <h2 class="section-title">Project Administration & Quality Control</h2>
+                        <p class="mb-4">Understanding the importance of seamless results and professional care for the success of a project, we have made quality control the cornerstone of our services. With supervisors on every site and a diligent quality control system, we are capable of exceeding expectations, every time.</p>
+                        <p class="mb-4">We prepare a method statement and planning proposal for all projects to be executed. The company has defined objectives covering the transfer of knowledge to trainees. The achievement of quality control standards and establishing of the necessity are for forward planning and continued progress monitoring.</p>
+                        <a href="#contact" class="btn btn-medium btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge">
+                            <span>
+                                <span class="btn-text">Learn More</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-10 col-xl-5 offset-xl-1 col-lg-6" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <h3 class="fw-700 text-dark-gray ls-minus-2px">Project Administration & Quality Control</h3>
-                    <p class="w-85 lg-w-100 mb-30px">Understanding the importance of seamless results and professional care for the success of a project, we have made quality control the cornerstone of our services. With supervisors on every site and a diligent quality control system, we are capable of exceeding expectations, every time.</p>
-                    <p class="w-85 lg-w-100 mb-30px">We prepare a method statement and planning proposal for all projects to be executed. The company has defined objectives covering the transfer of knowledge to trainees. The achievement of quality control standards and establishing of the necessity are for forward planning and continued progress monitoring.</p>
-                    <a href="#contact" class="btn btn-medium btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge">
-                        <span>
-                            <span class="btn-text">Learn More</span>
-                        </span>
-                    </a>
+                <div class="col-lg-6">
+                    <div class="quality-image">
+                        <img src="images/image7.jpeg" alt="Quality Control">
+                    </div>
                 </div>
             </div>
         </div>
@@ -467,6 +686,7 @@
                                 <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Paint Production</a></li>
                                 <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Chemical Supply</a></li>
                                 <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-text-primary">Project Management</a></li>
+                                <li class="mb-2"><a href="#booking" class="text-light text-decoration-none hover-text-primary">Booking Service</a></li>
                             </ul>
                         </div>
                         
@@ -550,5 +770,22 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Booking Form Submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For now, we'll just show an alert and reset the form
+            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+            
+            // Reset the form
+            document.getElementById('bookingForm').reset();
+        });
+    </script>
 </body>
 </html>
