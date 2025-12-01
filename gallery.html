@@ -111,12 +111,12 @@
         }
         
         .active {
-            color: #007bff !important;
+            color: #111827 !important;
             font-weight: 600;
         }
         
         .page-hero {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg,  #111827 100%);
             color: white;
             padding: 120px 0 80px;
             text-align: center;
@@ -202,7 +202,73 @@
             background: #007bff;
             color: white;
             border-color: #007bff;
+
+
+
         }
+
+
+
+        /* Navbar styling */
+.bg-dark {
+    background-color: #111827 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #FFD700 !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FFD700;
+    border-radius: 2px;
+}
+
+/* Navbar toggler color */
+.navbar-toggler-line {
+    background-color: #FFD700 !important;
+}
+
+/* Button hover effect */
+.header-button .btn:hover {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(17, 24, 39, 0.95);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+}
+
+@media (max-width: 575px) {
+    .navbar-brand span {
+        font-size: 1.1rem;
+        color: #FFD700 !important;
+    }
+}
     </style>
 </head>
 

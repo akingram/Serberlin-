@@ -34,9 +34,70 @@
             letter-spacing: -0.3px;
         }
         
+        /* Navbar styling */
+        .bg-dark {
+            background-color: #111827 !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #FFD700 !important;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #ffffff !important;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FFD700;
+            border-radius: 2px;
+        }
+
+        /* Navbar toggler color */
+        .navbar-toggler-line {
+            background-color: #FFD700 !important;
+        }
+
+        /* Button hover effect */
+        .header-button .btn:hover {
+            background-color: #ffffff !important;
+            color: #111827 !important;
+        }
+
+        /* Contact button styling */
+        .btn-base-color {
+            background-color: #FFD700 !important;
+            border-color: #FFD700 !important;
+            color: #111827 !important;
+        }
+
+        .btn-base-color:hover {
+            background-color: #111827 !important;
+            border-color: #111827 !important;
+            color: #FFD700 !important;
+        }
+        
         @media (max-width: 991px) {
             .navbar-collapse {
                 margin-top: 15px;
+                background-color: rgba(17, 24, 39, 0.95);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+                border: 1px solid rgba(255, 215, 0, 0.2);
             }
             
             .navbar-nav {
@@ -74,6 +135,7 @@
         @media (max-width: 575px) {
             .navbar-brand span {
                 font-size: 1.1rem;
+                color: #FFD700 !important;
             }
             
             .hero-buttons {
@@ -110,13 +172,8 @@
             }
         }
         
-        .active {
-            color: #007bff !important;
-            font-weight: 600;
-        }
-        
         .page-hero {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: linear-gradient(135deg, #111827 0%, #111827 100%);
             color: white;
             padding: 120px 0 80px;
             text-align: center;
@@ -134,7 +191,7 @@
         }
         
         .mission-values {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #111827 0%, #111827 100%);
             color: white;
             padding: 80px 0;
             border-radius: 12px;
@@ -237,11 +294,11 @@
 <body data-mobile-nav-style="classic">
 
     <header>
-        <nav class="navbar navbar-expand-lg header-light bg-transparent header-reverse glass-effect" data-header-hover="light">
+        <nav class="navbar navbar-expand-lg header-light bg-dark header-reverse glass-effect" data-header-hover="light">
             <div class="container-fluid">
                 <div class="col-auto col-lg-2 me-lg-0 me-auto">
                     <a class="navbar-brand" href="index.html" style="text-decoration: none;">
-                        <span>Serberlin Global Services</span>
+                        <span style="color: #FFD700;">Serberlin Global Services</span>
                     </a>
                 </div>
                 <div class="col-auto menu-order position-static">
@@ -253,20 +310,20 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                            <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-                          <li class="nav-item"><a href="careers.html" class="nav-link active">careers</a></li>
+                            <li class="nav-item"><a href="index.html" class="nav-link" style="color: #FFD700;">Home</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link" style="color: #FFD700;">Services</a></li>
+                            <li class="nav-item"><a href="gallery.html" class="nav-link" style="color: #FFD700;">Gallery</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link active" style="color: #FFD700;">About</a></li>
+                            <li class="nav-item"><a href="careers.html" class="nav-link" style="color: #FFD700;">Careers</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
                     <div class="header-icon">
                         <div class="header-button">
-                            <a href="#contact" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-base-color">
+                            <a href="#contact" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-base-color" style="background-color: #FFD700; border-color: #FFD700;">
                                 <span>
-                                    <span class="btn-double-text" data-text="Get started">Get Started</span>
+                                    <span class="btn-double-text" data-text="Get started" style="color: #111827;">Get Started</span>
                                 </span>
                             </a>
                         </div>
