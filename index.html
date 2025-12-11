@@ -136,6 +136,231 @@
             border-radius: 6px;
         }
         
+        /* Testimonial Cards Section - Linear Scrolling */
+        .testimonial-cards-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-cards-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #111827, #FFD700, #111827);
+            z-index: 1;
+        }
+        
+        .testimonial-cards-container {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(17, 24, 39, 0.1);
+            width: 380px;
+            height: 460px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            opacity: 0;
+            transition: all 0.5s ease;
+            border: 2px solid rgba(255, 215, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .testimonial-card.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 3;
+        }
+        
+        .testimonial-card.prev {
+            transform: translate(-150%, -50%) scale(0.8);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .testimonial-card.next {
+            transform: translate(50%, -50%) scale(0.8);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 50px rgba(17, 24, 39, 0.15);
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4a5568;
+            font-style: italic;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .testimonial-quote::before {
+            content: "''";
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: #FFD700;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #FFD700;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: #111827;
+            font-size: 1.2rem;
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        
+        .rating {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-position {
+            font-weight: 500;
+            color: #111827;
+        }
+        
+        /* Navigation Controls */
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #111827;
+            color: #FFD700;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-nav-btn:hover {
+            background: #FFD700;
+            color: #111827;
+            transform: scale(1.1);
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background: #FFD700;
+            transform: scale(1.2);
+        }
+        
+        .testimonial-dot:hover {
+            background: #FFD700;
+        }
+        
+        .auto-scroll-indicator {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        .auto-scroll-toggle {
+            width: 50px;
+            height: 26px;
+            background: #cbd5e0;
+            border-radius: 13px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .auto-scroll-toggle.active {
+            background: #FFD700;
+        }
+        
+        .auto-scroll-toggle::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .auto-scroll-toggle.active::after {
+            left: 26px;
+        }
+        
         /* FAQ Section Styles */
         .faq-section {
             background-color: #f8f9fa;
@@ -285,6 +510,38 @@
                 font-size: 1.6rem;
             }
             
+            /* Testimonial Cards Responsive */
+            .testimonial-cards-section {
+                padding: 70px 0;
+            }
+            
+            .testimonial-card {
+                width: 320px;
+                height: 420px;
+                padding: 25px;
+            }
+            
+            .testimonial-quote {
+                font-size: 1rem;
+                padding-left: 20px;
+            }
+            
+            .testimonial-quote::before {
+                font-size: 2.5rem;
+            }
+            
+            .testimonial-cards-container {
+                height: 450px;
+            }
+            
+            .testimonial-card.prev {
+                transform: translate(-140%, -50%) scale(0.8);
+            }
+            
+            .testimonial-card.next {
+                transform: translate(40%, -50%) scale(0.8);
+            }
+            
             .faq-section {
                 padding: 60px 0;
             }
@@ -322,6 +579,57 @@
             
             .navbar-brand span {
                 font-size: 1.4rem;
+            }
+            
+            /* Testimonial Cards Mobile */
+            .testimonial-cards-section {
+                padding: 50px 0;
+            }
+            
+            .testimonial-card {
+                width: 280px;
+                height: 400px;
+                padding: 20px;
+            }
+            
+            .testimonial-quote {
+                font-size: 0.95rem;
+                padding-left: 18px;
+            }
+            
+            .testimonial-quote::before {
+                font-size: 2.2rem;
+            }
+            
+            .author-image {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .author-info h4 {
+                font-size: 1.1rem;
+            }
+            
+            .testimonial-cards-container {
+                height: 420px;
+            }
+            
+            .testimonial-card.prev {
+                transform: translate(-130%, -50%) scale(0.8);
+            }
+            
+            .testimonial-card.next {
+                transform: translate(30%, -50%) scale(0.8);
+            }
+            
+            .testimonial-nav {
+                gap: 15px;
+            }
+            
+            .testimonial-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
             
             /* Mobile-specific text improvements */
@@ -416,6 +724,33 @@
             
             h3 {
                 font-size: 1.4rem;
+            }
+            
+            /* Testimonial Cards Extra Small */
+            .testimonial-cards-section {
+                padding: 40px 0;
+            }
+            
+            .testimonial-card {
+                width: 260px;
+                height: 380px;
+                padding: 18px;
+            }
+            
+            .testimonial-quote {
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-cards-container {
+                height: 400px;
+            }
+            
+            .testimonial-card.prev {
+                transform: translate(-120%, -50%) scale(0.8);
+            }
+            
+            .testimonial-card.next {
+                transform: translate(20%, -50%) scale(0.8);
             }
             
             /* Further simplify for very small screens */
@@ -733,7 +1068,165 @@
         </div>
     </section>
 
-    <!-- Testimonial Section -->
+    <!-- Testimonial Cards Section - Linear Scrolling -->
+    <section class="testimonial-cards-section section-spacing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="fw-600 text-dark-gray mb-4">What Our Clients Say</h2>
+                    <p class="text-gray">Discover why industry leaders trust Serberlin Global Services for their premium paint needs.</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="testimonial-cards-container">
+                        <!-- Testimonial Card 1 - Mr Lawal -->
+                        <div class="testimonial-card testimonial-card-1 active">
+                            <div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-quote">
+                                    "Serberlin Global Services transformed our corporate headquarters with their premium paint collection. The color matching was impeccable, and the durability has exceeded our expectations. Our building has never looked better!"
+                                </div>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mr Lawal" class="author-image">
+                                <div class="author-info">
+                                    <h4>Mr. Lawal</h4>
+                                    <p class="testimonial-position">CEO, Haggai Savings and Loans Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial Card 2 - Engr. Tunde -->
+                        <div class="testimonial-card testimonial-card-2 next">
+                            <div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="testimonial-quote">
+                                    "As an engineering consultant, I recommend Serberlin paints for all our construction projects. Their technical support team helped us select the perfect industrial coatings that withstand harsh environmental conditions."
+                                </div>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Engr. Tunde" class="author-image">
+                                <div class="author-info">
+                                    <h4>Engr. Tunde</h4>
+                                    <p class="testimonial-position">Principal Engineering Consultant</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial Card 3 - Mr Vincent -->
+                        <div class="testimonial-card testimonial-card-3">
+                            <div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-quote">
+                                    "The extensive color palette from Serberlin allowed us to create stunning visual experiences for our clients. Their paints apply smoothly, dry quickly, and maintain their vibrant colors year after year."
+                                </div>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mr Vincent" class="author-image">
+                                <div class="author-info">
+                                    <h4>Mr. Vincent</h4>
+                                    <p class="testimonial-position">Senior Project Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial Card 4 - Additional Testimonial -->
+                        <div class="testimonial-card testimonial-card-4">
+                            <div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-quote">
+                                    "Working with Serberlin Global Services has been a game-changer for our residential projects. Their expert color consultants helped us create harmonious spaces that our clients absolutely love."
+                                </div>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Sarah Johnson" class="author-image">
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p class="testimonial-position">Interior Design Director</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial Card 5 - Additional Testimonial -->
+                        <div class="testimonial-card testimonial-card-5 prev">
+                            <div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="testimonial-quote">
+                                    "For our commercial real estate developments, we exclusively use Serberlin paints. Their products enhance property value through superior finishes that withstand heavy traffic."
+                                </div>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Michael Chen" class="author-image">
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p class="testimonial-position">Commercial Real Estate Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Controls -->
+                    <div class="testimonial-nav">
+                        <button class="testimonial-nav-btn prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="testimonial-dots">
+                            <button class="testimonial-dot active" data-index="1"></button>
+                            <button class="testimonial-dot" data-index="2"></button>
+                            <button class="testimonial-dot" data-index="3"></button>
+                            <button class="testimonial-dot" data-index="4"></button>
+                            <button class="testimonial-dot" data-index="5"></button>
+                        </div>
+                        
+                        <button class="testimonial-nav-btn next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Auto Scroll Toggle -->
+                    <!-- <div class="auto-scroll-indicator">
+                        <span>Auto Scroll</span>
+                        <div class="auto-scroll-toggle active"></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Existing Testimonial Section (Keeping it as backup) -->
     <section class="section-spacing">
         <div class="container">
             <div class="row justify-content-center align-items-center">
@@ -1105,6 +1598,142 @@
 
     <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Testimonial Cards Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const autoScrollToggle = document.querySelector('.auto-scroll-toggle');
+            let currentIndex = 0;
+            let autoScrollInterval;
+            let isAutoScrollEnabled = true;
+            
+            // Initialize cards
+            updateCardPositions();
+            
+            // Start auto-scroll
+            startAutoScroll();
+            
+            // Function to update card positions
+            function updateCardPositions() {
+                cards.forEach((card, index) => {
+                    card.classList.remove('active', 'prev', 'next');
+                    
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                    } else if (index === (currentIndex + 1) % cards.length) {
+                        card.classList.add('next');
+                    } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
+                        card.classList.add('prev');
+                    }
+                });
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+            
+            // Function to go to next card
+            function goToNext() {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateCardPositions();
+            }
+            
+            // Function to go to previous card
+            function goToPrev() {
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                updateCardPositions();
+            }
+            
+            // Function to go to specific card
+            function goToCard(index) {
+                currentIndex = index;
+                updateCardPositions();
+            }
+            
+            // Start auto-scroll
+            function startAutoScroll() {
+                if (autoScrollInterval) {
+                    clearInterval(autoScrollInterval);
+                }
+                
+                if (isAutoScrollEnabled) {
+                    autoScrollInterval = setInterval(goToNext, 4000); // Change card every 4 seconds
+                }
+            }
+            
+            // Event listeners for navigation buttons
+            prevBtn.addEventListener('click', function() {
+                goToPrev();
+                resetAutoScroll();
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                goToNext();
+                resetAutoScroll();
+            });
+            
+            // Event listeners for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    goToCard(index);
+                    resetAutoScroll();
+                });
+            });
+            
+            // Reset auto-scroll timer
+            function resetAutoScroll() {
+                if (isAutoScrollEnabled) {
+                    clearInterval(autoScrollInterval);
+                    startAutoScroll();
+                }
+            }
+            
+            // Auto-scroll toggle
+            autoScrollToggle.addEventListener('click', function() {
+                isAutoScrollEnabled = !isAutoScrollEnabled;
+                this.classList.toggle('active');
+                
+                if (isAutoScrollEnabled) {
+                    startAutoScroll();
+                } else {
+                    clearInterval(autoScrollInterval);
+                }
+            });
+            
+            // Pause auto-scroll on hover
+            const container = document.querySelector('.testimonial-cards-container');
+            container.addEventListener('mouseenter', function() {
+                if (isAutoScrollEnabled) {
+                    clearInterval(autoScrollInterval);
+                }
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                if (isAutoScrollEnabled) {
+                    startAutoScroll();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    goToPrev();
+                    resetAutoScroll();
+                } else if (e.key === 'ArrowRight') {
+                    goToNext();
+                    resetAutoScroll();
+                }
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         /* https://learn.jquery.com/using-jquery-core/document-ready/ */
