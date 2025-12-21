@@ -90,6 +90,42 @@
             color: #FFD700 !important;
         }
         
+        /* CEO Card Styling */
+        .ceo-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .ceo-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+        }
+        
+        .ceo-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FFD700;
+            color: #111827;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .linkedin-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .linkedin-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+        
         @media (max-width: 991px) {
             .navbar-collapse {
                 margin-top: 15px;
@@ -450,18 +486,37 @@
         <div class="container mt-10 team-section">
             <div class="row text-center mb-5">
                 <div class="col-12">
-                    <h2 class="fw-700 text-dark-gray ls-minus-2px">Meet Our Team</h2>
+                    <h2 class="fw-700 text-dark-gray ls-minus-2px">Meet Our Leadership Team</h2>
                     <p class="fs-18">The passionate professionals behind our success</p>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+            <div class="row row-cols-1 row-cols-lg-5 row-cols-sm-2" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <!-- CEO Card -->
+                <div class="col team-style-08 border-radius-6px md-mb-30px ceo-card" onclick="window.open('https://www.linkedin.com/in/oke-oluwagbenga-627b17395?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B08AFIPA5SNiYvgtGifDYgw%3D%3D', '_blank')">
+                    <a href="https://www.linkedin.com/in/oke-oluwagbenga-627b17395?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B08AFIPA5SNiYvgtGifDYgw%3D%3D" target="_blank" class="linkedin-link">
+                        <div class="ceo-badge">CEO</div>
+                        <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
+                            <img src="images/ceo-profile.jpg" alt="Oke Oluwagbenga - CEO" onerror="this.src='images/demo-corporate-team-01.jpg'">
+                            <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
+                                <div class="w-100">
+                                    <span class="team-member-name fw-600 text-black d-block">Oke Oluwagbenga</span>
+                                    <span class="fs-15 fw-400 lh-20 text-black d-block">Chief Executive Officer</span>
+                                    <span class="fs-14 fw-400 lh-20 text-gray d-block mt-1">
+                                        <i class="fab fa-linkedin me-1"></i> Connect on LinkedIn
+                                    </span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
                 <div class="col team-style-08 border-radius-6px md-mb-30px">
                     <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                        <img src="images/demo-corporate-team-01.jpg" alt />
+                        <img src="images/demo-corporate-team-01.jpg" alt="Jeremy Dupont - Director" />
                         <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
                             <div class="w-100">
-                                <span class="team-member-name fw-600 text-black d-block">Jeremy dupont</span>
-                                <span class=" fs-15 fw-400 lh-20 text-black d-block">Director</span>
+                                <span class="team-member-name fw-600 text-black d-block">Jeremy Dupont</span>
+                                <span class="fs-15 fw-400 lh-20 text-black d-block">Director</span>
                             </div>
                         </figcaption>
                     </figure>
@@ -469,11 +524,11 @@
 
                 <div class="col team-style-08 border-radius-6px md-mb-30px">
                     <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                        <img src="images/demo-corporate-team-02.jpg" alt />
+                        <img src="images/demo-corporate-team-02.jpg" alt="Jessica Dover - Founder" />
                         <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
                             <div class="w-100">
-                                <span class="team-member-name fw-600 text-black d-block">Jessica dover</span>
-                                <span class=" fs-15 lh-20 fw-400 text-black d-block">Founder</span>
+                                <span class="team-member-name fw-600 text-black d-block">Jessica Dover</span>
+                                <span class="fs-15 lh-20 fw-400 text-black d-block">Founder</span>
                             </div>
                         </figcaption>
                     </figure>
@@ -481,10 +536,10 @@
 
                 <div class="col team-style-08 border-radius-6px xs-mb-30px">
                     <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                        <img src="images/demo-corporate-team-03.jpg" alt />
+                        <img src="images/demo-corporate-team-03.jpg" alt="Matthew Taylor - Manager" />
                         <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
                             <div class="w-100">
-                                <span class="team-member-name fw-600 text-black d-block">Matthew taylor</span>
+                                <span class="team-member-name fw-600 text-black d-block">Matthew Taylor</span>
                                 <span class="fw-400 fs-15 lh-20 text-black d-block">Manager</span>
                             </div>
                         </figcaption>
@@ -493,10 +548,10 @@
 
                 <div class="col team-style-08 border-radius-6px">
                     <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                        <img src="images/demo-corporate-team-04.jpg" alt />
+                        <img src="images/demo-corporate-team-04.jpg" alt="Johncy Parker - Manager" />
                         <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
                             <div class="w-100">
-                                <span class="team-member-name fw-600 text-black d-block">Johncy parker</span>
+                                <span class="team-member-name fw-600 text-black d-block">Johncy Parker</span>
                                 <span class="fw-400 fs-15 lh-20 text-black d-block">Manager</span>
                             </div>
                         </figcaption>
