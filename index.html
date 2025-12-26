@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="css/responsive.min.css" />
     <link rel="stylesheet" href="demos/paint/paint.css" />
     
+    <!-- Font Awesome for chat icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         /* Clean, Readable Font Styles */
         body {
@@ -435,6 +438,258 @@
             color: #4a5568 !important;
         }
         
+        /* Sam the Painter Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #111827 0%, #FFD700 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .chatbot-toggle::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 2px solid #FFD700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid #FFD700;
+        }
+        
+        .chatbot-window.active {
+            display: flex;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(to right, #111827, #2c3038);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #FFD700;
+        }
+        
+        .chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chatbot-title h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #FFD700;
+        }
+        
+        .chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #111827;
+            font-weight: bold;
+        }
+        
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .chatbot-close:hover {
+            color: #FFD700;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.4;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+        
+        .message-bot {
+            background: white;
+            border: 1px solid #e9ecef;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            color: #333;
+        }
+        
+        .message-user {
+            background: linear-gradient(135deg, #111827, #2c3038);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chatbot-input {
+            padding: 15px 20px;
+            border-top: 1px solid #e9ecef;
+            background: white;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        
+        .chatbot-input input:focus {
+            border-color: #FFD700;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+        }
+        
+        .chatbot-input button {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #111827;
+            color: #FFD700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chatbot-input button:hover {
+            background: #FFD700;
+            color: #111827;
+            transform: scale(1.05);
+        }
+        
+        .quick-options {
+            padding: 10px 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .quick-option {
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #333;
+        }
+        
+        .quick-option:hover {
+            background: #FFD700;
+            color: #111827;
+            border-color: #FFD700;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 15px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 18px;
+            align-self: flex-start;
+            width: fit-content;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
         @media (max-width: 991px) {
             .navbar-collapse {
                 margin-top: 15px;
@@ -513,6 +768,17 @@
             
             .navbar-brand span {
                 color: #FFD700 !important;
+            }
+            
+            /* Chatbot responsive */
+            .chatbot-window {
+                width: 320px;
+                height: 450px;
+            }
+            
+            .chatbot-container {
+                bottom: 15px;
+                right: 15px;
             }
         }
         
@@ -652,6 +918,19 @@
                 padding: 18px 20px;
                 font-size: 1rem;
             }
+            
+            /* Chatbot responsive */
+            .chatbot-window {
+                width: 300px;
+                height: 400px;
+                right: 10px;
+            }
+            
+            .chatbot-toggle {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
         }
         
         @media (max-width: 575px) {
@@ -728,6 +1007,31 @@
             
             .navbar-brand span {
                 font-size: 1.3rem;
+            }
+            
+            /* Chatbot for small screens */
+            .chatbot-window {
+                width: 280px;
+                height: 380px;
+                bottom: 65px;
+            }
+            
+            .chatbot-messages {
+                padding: 15px;
+            }
+            
+            .message {
+                font-size: 13px;
+                padding: 10px 14px;
+            }
+            
+            .quick-options {
+                padding: 8px 15px;
+            }
+            
+            .quick-option {
+                font-size: 11px;
+                padding: 6px 10px;
             }
         }
         
@@ -1514,6 +1818,39 @@
         </div>
     </footer>
 
+    <!-- Sam the Painter Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="chatbot-avatar">S</div>
+                    <h3>Sam The Painter 👨🏽‍🎨</h3>
+                </div>
+                <button class="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message message-bot">
+                    Hi there! 👋 I'm Sam, your paint expert at Serberlin Global Services. How can I help you with your painting project today?
+                </div>
+            </div>
+            <div class="quick-options">
+                <button class="quick-option" data-query="color selection">Color Selection</button>
+                <button class="quick-option" data-query="paint types">Paint Types</button>
+                <button class="quick-option" data-query="pricing">Pricing & Quotes</button>
+                <button class="quick-option" data-query="technical support">Technical Support</button>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type your question here...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chatbot-toggle">
+            <i class="fas fa-paint-roller"></i>
+        </button>
+    </div>
+
     <div class="scroll-progress d-none d-xxl-block">
         <a href="#" class="scroll-top" aria-label="scroll">
             <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
@@ -1534,7 +1871,6 @@
             const dots = document.querySelectorAll('.testimonial-dot');
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
-            const autoScrollToggle = document.querySelector('.auto-scroll-toggle');
             let currentIndex = 0;
             let autoScrollInterval;
             let isAutoScrollEnabled = true;
@@ -1624,18 +1960,6 @@
                 }
             }
             
-            // Auto-scroll toggle
-            autoScrollToggle.addEventListener('click', function() {
-                isAutoScrollEnabled = !isAutoScrollEnabled;
-                this.classList.toggle('active');
-                
-                if (isAutoScrollEnabled) {
-                    startAutoScroll();
-                } else {
-                    clearInterval(autoScrollInterval);
-                }
-            });
-            
             // Pause auto-scroll on hover
             const container = document.querySelector('.testimonial-cards-container');
             container.addEventListener('mouseenter', function() {
@@ -1660,6 +1984,254 @@
                     resetAutoScroll();
                 }
             });
+        });
+    </script>
+
+    <!-- Sam the Painter Chatbot Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.querySelector('.chatbot-toggle');
+            const chatbotWindow = document.querySelector('.chatbot-window');
+            const chatbotClose = document.querySelector('.chatbot-close');
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.getElementById('chatInput');
+            const sendMessageBtn = document.getElementById('sendMessage');
+            const quickOptions = document.querySelectorAll('.quick-option');
+            
+            // Knowledge base for Sam the Painter
+            const knowledgeBase = {
+                greetings: [
+                    "Hello! I'm Sam, your paint expert at Serberlin Global Services. How can I assist you today?",
+                    "Hi there! Ready to help with all your painting needs. What can I do for you?",
+                    "Welcome! I'm Sam, your virtual paint consultant. How can I make your painting project easier?"
+                ],
+                
+                "color selection": {
+                    response: "I'd love to help you with color selection! Here are some tips:\n\n1. **Consider lighting**: Natural light shows true colors, while artificial light can alter them.\n2. **Room purpose**: Calm colors for bedrooms, vibrant colors for creative spaces.\n3. **Sample testing**: Always test colors on your walls before committing.\n4. **Color psychology**: Blues for calm, yellows for energy, greens for balance.\n\nWould you like specific recommendations for a particular room?",
+                    followUp: "Tell me which room you're painting and I'll suggest some perfect color options!"
+                },
+                
+                "paint types": {
+                    response: "We offer a wide range of paint types for different applications:\n\n**Interior Paints:**\n• **Matte/Flat** - Hides imperfections, great for ceilings\n• **Eggshell** - Low sheen, easy to clean\n• **Satin** - Soft sheen, perfect for kitchens/bathrooms\n• **Semi-Gloss** - Durable, ideal for trim and doors\n\n**Exterior Paints:**\n• **Acrylic Latex** - Weather resistant, flexible\n• **Elastomeric** - Stretches with temperature changes\n• **Specialty Coatings** - For metal, concrete, etc.\n\nWhat surface are you planning to paint?",
+                    followUp: "Let me know what surface you're working with and I'll recommend the perfect paint type!"
+                },
+                
+                "pricing": {
+                    response: "Our pricing varies based on:\n\n1. **Paint Type**: Premium lines vs. standard options\n2. **Finish**: Different finishes have different price points\n3. **Quantity**: Bulk discounts available for large projects\n4. **Custom Colors**: May have additional charges\n\nFor an accurate quote, I recommend:\n• Measuring your space (walls, ceilings)\n• Choosing your preferred paint type\n• Selecting your colors\n\nWould you like me to connect you with our sales team for a detailed quote?",
+                    followUp: "I can help you calculate an estimate if you share the square footage you need to cover!"
+                },
+                
+                "technical support": {
+                    response: "Technical issues? I'm here to help! Common solutions:\n\n**Preparation Problems:**\n• Ensure surfaces are clean, dry, and free of grease\n• Use appropriate primer for your surface type\n\n**Application Issues:**\n• Apply paint in consistent strokes\n• Maintain a wet edge to avoid lap marks\n• Use high-quality brushes/rollers\n\n**Drying/Curing:**\n• Follow recommended drying times between coats\n• Ensure proper ventilation\n• Maintain optimal temperature/humidity\n\nWhat specific issue are you experiencing?",
+                    followUp: "Describe your painting issue and I'll provide step-by-step troubleshooting!"
+                },
+                
+                "color matching": {
+                    response: "Our custom color matching service is excellent! We can match:\n\n• Existing paint colors\n• Fabric or upholstery samples\n• Photographs\n• Any physical color sample\n\n**Process:**\n1. Bring your sample to our store\n2. Our experts analyze it with digital color technology\n3. We create a custom mix\n4. Provide a test sample for verification\n\nDo you have a specific color you'd like us to match?",
+                    followUp: "Bring your color sample to our nearest location for perfect matching!"
+                },
+                
+                "delivery": {
+                    response: "We offer several delivery options:\n\n**Standard Delivery:** 3-5 business days\n**Express Delivery:** 1-2 business days (extra charge)\n**Bulk Delivery:** Special arrangements for large orders\n**Store Pickup:** Available at all our locations\n\nDelivery costs depend on:\n• Order size and weight\n• Delivery location\n• Delivery speed\n\nWould you like to check delivery options for your area?",
+                    followUp: "Share your location and order size for specific delivery information!"
+                },
+                
+                "environmental": {
+                    response: "We're committed to sustainability! Our eco-friendly options include:\n\n**Low-VOC Paints:** Minimal volatile organic compounds\n**Zero-VOC Paints:** No harmful emissions\n**Natural Paints:** Made from plant-based ingredients\n**Recycled Packaging:** Sustainable containers\n**Water-Based Formulas:** Easier cleanup, less environmental impact\n\nOur 'EcoChoice' label identifies our greenest products. Would you like recommendations for eco-friendly paints?",
+                    followUp: "I can suggest specific eco-friendly products for your project!"
+                },
+                
+                "application tips": {
+                    response: "Great painting results start with proper application:\n\n**Before Painting:**\n1. Clean surfaces thoroughly\n2. Repair cracks and holes\n3. Sand glossy surfaces\n4. Use appropriate primer\n\n**During Painting:**\n1. Use high-quality tools\n2. Apply in consistent strokes\n3. Maintain wet edges\n4. Allow proper drying time between coats\n\n**After Painting:**\n1. Clean tools immediately\n2. Store leftover paint properly\n3. Dispose of waste responsibly\n\nNeed tips for a specific surface type?",
+                    followUp: "What type of surface are you painting? I'll provide tailored advice!"
+                },
+                
+                fallback: "I'm not sure about that specific question, but I can definitely help with:\n• Color selection and matching\n• Paint type recommendations\n• Application techniques\n• Troubleshooting painting issues\n• Product information and pricing\n\nWhat else can I assist you with?"
+            };
+            
+            // Common questions mapping
+            const commonQuestions = {
+                "hello": "greetings",
+                "hi": "greetings",
+                "hey": "greetings",
+                "greetings": "greetings",
+                "colors": "color selection",
+                "colour": "color selection",
+                "color": "color selection",
+                "paint": "paint types",
+                "types": "paint types",
+                "finish": "paint types",
+                "price": "pricing",
+                "cost": "pricing",
+                "quote": "pricing",
+                "expensive": "pricing",
+                "technical": "technical support",
+                "problem": "technical support",
+                "issue": "technical support",
+                "match": "color matching",
+                "custom": "color matching",
+                "delivery": "delivery",
+                "shipping": "delivery",
+                "deliver": "delivery",
+                "eco": "environmental",
+                "green": "environmental",
+                "environment": "environmental",
+                "apply": "application tips",
+                "brush": "application tips",
+                "roller": "application tips",
+                "how to paint": "application tips"
+            };
+            
+            // Toggle chatbot window
+            chatbotToggle.addEventListener('click', function() {
+                chatbotWindow.classList.toggle('active');
+                if (chatbotWindow.classList.contains('active')) {
+                    chatInput.focus();
+                }
+            });
+            
+            chatbotClose.addEventListener('click', function() {
+                chatbotWindow.classList.remove('active');
+            });
+            
+            // Close chatbot when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!chatbotWindow.contains(event.target) && !chatbotToggle.contains(event.target)) {
+                    chatbotWindow.classList.remove('active');
+                }
+            });
+            
+            // Send message function
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage(message, 'user');
+                    
+                    // Clear input
+                    chatInput.value = '';
+                    
+                    // Show typing indicator
+                    showTypingIndicator();
+                    
+                    // Process and respond after delay
+                    setTimeout(() => {
+                        removeTypingIndicator();
+                        const response = generateResponse(message.toLowerCase());
+                        addMessage(response, 'bot');
+                        scrollToBottom();
+                    }, 1000 + Math.random() * 1000);
+                }
+            }
+            
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message message-${sender}`;
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                scrollToBottom();
+            }
+            
+            // Show typing indicator
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typingIndicator';
+                typingDiv.innerHTML = `
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                `;
+                chatMessages.appendChild(typingDiv);
+                scrollToBottom();
+            }
+            
+            // Remove typing indicator
+            function removeTypingIndicator() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            // Generate response based on user input
+            function generateResponse(userInput) {
+                // Check for greetings
+                if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) {
+                    const greetings = knowledgeBase.greetings;
+                    return greetings[Math.floor(Math.random() * greetings.length)];
+                }
+                
+                // Check for thank you
+                if (userInput.includes('thank')) {
+                    return "You're welcome! Is there anything else I can help you with regarding your painting project?";
+                }
+                
+                // Check for goodbye
+                if (userInput.includes('bye') || userInput.includes('goodbye')) {
+                    return "Thanks for chatting! Remember, I'm here whenever you need paint advice. Have a colorful day! 🎨";
+                }
+                
+                // Check for specific topics
+                for (const [keyword, topic] of Object.entries(commonQuestions)) {
+                    if (userInput.includes(keyword)) {
+                        if (topic === 'greetings') {
+                            const greetings = knowledgeBase.greetings;
+                            return greetings[Math.floor(Math.random() * greetings.length)];
+                        }
+                        const topicData = knowledgeBase[topic];
+                        if (topicData) {
+                            return topicData.response;
+                        }
+                    }
+                }
+                
+                // Check direct topic matches
+                for (const [topic, data] of Object.entries(knowledgeBase)) {
+                    if (topic !== 'greetings' && topic !== 'fallback') {
+                        if (userInput.includes(topic.replace(' ', ''))) {
+                            return data.response;
+                        }
+                    }
+                }
+                
+                // Fallback response
+                return knowledgeBase.fallback;
+            }
+            
+            // Scroll to bottom of chat
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Event listeners
+            sendMessageBtn.addEventListener('click', sendMessage);
+            
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Quick option buttons
+            quickOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const query = this.getAttribute('data-query');
+                    chatInput.value = query;
+                    sendMessage();
+                });
+            });
+            
+            // Auto-open chatbot on page load after 10 seconds
+            setTimeout(() => {
+                if (!chatbotWindow.classList.contains('active')) {
+                    chatbotWindow.classList.add('active');
+                    setTimeout(() => {
+                        chatInput.focus();
+                    }, 300);
+                }
+            }, 10000);
         });
     </script>
 
