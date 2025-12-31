@@ -438,7 +438,7 @@
             color: #4a5568 !important;
         }
         
-        /* Sam the Painter Chatbot Styles */
+        /* Sam the Painter Chatbot Styles - ENHANCED */
         .chatbot-container {
             position: fixed;
             bottom: 20px;
@@ -490,8 +490,8 @@
             position: absolute;
             bottom: 70px;
             right: 0;
-            width: 350px;
-            height: 500px;
+            width: 380px;
+            height: 550px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
@@ -570,7 +570,7 @@
         }
         
         .message {
-            max-width: 80%;
+            max-width: 85%;
             padding: 12px 16px;
             border-radius: 18px;
             line-height: 1.4;
@@ -584,6 +584,7 @@
             align-self: flex-start;
             border-bottom-left-radius: 5px;
             color: #333;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .message-user {
@@ -591,6 +592,7 @@
             color: white;
             align-self: flex-end;
             border-bottom-right-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .chatbot-input {
@@ -690,6 +692,118 @@
             30% { transform: translateY(-5px); }
         }
         
+        /* Chatbot Enhanced Features */
+        .message-bot.suggestion {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .chatbot-suggestions {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .suggestion-title {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .suggestion-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .suggestion-btn {
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 16px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #333;
+        }
+        
+        .suggestion-btn:hover {
+            background: #FFD700;
+            border-color: #FFD700;
+            color: #111827;
+        }
+        
+        .chatbot-actions {
+            display: flex;
+            gap: 10px;
+            padding: 10px 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .chatbot-action-btn {
+            flex: 1;
+            padding: 8px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .chatbot-action-btn:hover {
+            background: #FFD700;
+            border-color: #FFD700;
+            color: #111827;
+        }
+        
+        /* Chatbot typing animation */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .typing-text::after {
+            content: '...';
+            animation: blink 1.4s infinite;
+        }
+        
+        /* Enhanced message styling */
+        .message-bot h4 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #111827;
+            font-size: 14px;
+        }
+        
+        .message-bot ul, .message-bot ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        
+        .message-bot li {
+            margin-bottom: 4px;
+        }
+        
+        .message-bot strong {
+            color: #111827;
+        }
+        
+        .chatbot-status {
+            font-size: 11px;
+            color: #666;
+            text-align: center;
+            padding: 5px;
+            background: #f8f9fa;
+        }
+        
         @media (max-width: 991px) {
             .navbar-collapse {
                 margin-top: 15px;
@@ -772,8 +886,8 @@
             
             /* Chatbot responsive */
             .chatbot-window {
-                width: 320px;
-                height: 450px;
+                width: 340px;
+                height: 500px;
             }
             
             .chatbot-container {
@@ -921,8 +1035,8 @@
             
             /* Chatbot responsive */
             .chatbot-window {
-                width: 300px;
-                height: 400px;
+                width: 320px;
+                height: 450px;
                 right: 10px;
             }
             
@@ -1011,8 +1125,8 @@
             
             /* Chatbot for small screens */
             .chatbot-window {
-                width: 280px;
-                height: 380px;
+                width: 300px;
+                height: 420px;
                 bottom: 65px;
             }
             
@@ -1032,6 +1146,15 @@
             .quick-option {
                 font-size: 11px;
                 padding: 6px 10px;
+            }
+            
+            .suggestion-buttons {
+                gap: 6px;
+            }
+            
+            .suggestion-btn {
+                font-size: 11px;
+                padding: 5px 8px;
             }
         }
         
@@ -1511,7 +1634,7 @@
                             <textarea class="box-shadow-quadruple-large form-control" cols="40" rows="4" name="comment" placeholder="Your message"></textarea>
                         </div>
                         <div class="col-md-7 last-paragraph-no-margin">
-                            <p class="text-center text-md-start fs-16">We are committed to protecting your privacy. We will never collect information about you without your explicit consent.</p>
+                            <p class="text-center text-md-start fs-16">We are committed to protecting your privacy..</p>
                         </div>
                         <div class="col-md-5 text-center text-md-end sm-mt-20px">
                             <input type="hidden" name="redirect" value>
@@ -1527,161 +1650,195 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section section-spacing">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-4">
-                    <h2 class="faq-title fw-600 mb-3">Frequently Asked Questions</h2>
-                    <p class="w-85 mx-auto">Find answers to common questions about our premium paints, color selection process, and services. If you don't see what you're looking for, feel free to contact us directly.</p>
-                </div>
+   <section class="faq-section section-spacing">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-4">
+                <h2 class="faq-title fw-600 mb-3">Frequently Asked Questions</h2>
+                <p class="w-85 mx-auto">Find simple answers to common questions about our paints, colors, and services. If you need more help, just ask us.</p>
             </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="accordion" id="faqAccordion">
-                        <!-- FAQ Item 1 -->
-                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                            <h3 class="accordion-header" id="faqHeading1">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
-                                    How do I choose the right paint colour for my home?
-                                </button>
-                            </h3>
-                            <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Like any other decision, when you want to decide the right colour palette for your home, you need to start with practical considerations. In this case, they are the size of the room, the amount of sunlight the room gets, what the room will be used for, and of course, your budget.</p>
-                                    <p>Next, you come to your paint colour preferences. Do you like dark paint colours for home or are you looking for the best light colour for home? Each one of the above details will decide the colour code you should go for.</p>
-                                    <p>For example, let's assume you want to select the right wall paint colour for your bedroom. The room is relatively big with a medium-sized window. In this case, you can explore the darker bedroom Berger paints colour shades for one wall combined with lighter colours for the other three.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 2 -->
-                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 50, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                            <h3 class="accordion-header" id="faqHeading2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                                    What types of paint finishes do you offer?
-                                </button>
-                            </h3>
-                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>We offer a wide range of paint finishes to suit different needs and preferences:</p>
-                                    <ul>
-                                        <li><strong>Matte/Flat:</strong> Non-reflective finish that hides surface imperfections well, ideal for ceilings and low-traffic areas.</li>
-                                        <li><strong>Eggshell:</strong> Low-sheen finish with good durability, perfect for living rooms and bedrooms.</li>
-                                        <li><strong>Satin:</strong> Soft sheen that's easy to clean, great for kitchens, bathrooms, and trim.</li>
-                                        <li><strong>Semi-Gloss:</strong> Reflective and highly durable, excellent for high-moisture areas and trim work.</li>
-                                        <li><strong>High-Gloss:</strong> Maximum shine and durability, perfect for doors, cabinets, and furniture.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 3 -->
-                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                            <h3 class="accordion-header" id="faqHeading3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                                    How long does your paint typically last?
-                                </button>
-                            </h3>
-                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Our premium paints are formulated for exceptional durability and longevity. When applied correctly to properly prepared surfaces, our interior paints typically last 5-10 years before needing a refresh, while our exterior paints can maintain their appearance and protective qualities for 7-15 years depending on environmental conditions.</p>
-                                    <p>Factors that affect paint longevity include:</p>
-                                    <ul>
-                                        <li>Surface preparation</li>
-                                        <li>Application technique</li>
-                                        <li>Environmental exposure (sunlight, moisture, temperature fluctuations)</li>
-                                        <li>Quality of primer used</li>
-                                        <li>Number of coats applied</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 4 -->
-                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 150, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                            <h3 class="accordion-header" id="faqHeading4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                                    Do you offer custom color matching?
-                                </button>
-                            </h3>
-                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes, we offer professional custom color matching services. If you have a specific color in mind that isn't in our standard palette, bring us a sample (such as a fabric swatch, photo, or existing paint chip) and our experts can create a perfect match using our advanced color matching technology.</p>
-                                    <p>Our custom color matching service includes:</p>
-                                    <ul>
-                                        <li>Precise digital color analysis</li>
-                                        <li>Multiple sample adjustments to ensure accuracy</li>
-                                        <li>Test patches to verify the match in your lighting</li>
-                                        <li>Documentation of your custom color formula for future reference</li>
-                                    </ul>
-                                    <p>Please note that custom colors may require a minimum order quantity and additional lead time.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 5 -->
-                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                            <h3 class="accordion-header" id="faqHeading5">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-                                    What is the coverage area per gallon of your paint?
-                                </button>
-                            </h3>
-                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Coverage can vary depending on the surface texture, porosity, and application method, but as a general guideline:</p>
-                                    <ul>
-                                        <li>Our interior paints typically cover 350-400 square feet per gallon for the first coat on properly prepared surfaces.</li>
-                                        <li>Our exterior paints generally cover 250-350 square feet per gallon, depending on surface texture.</li>
-                                        <li>Primers typically cover 200-300 square feet per gallon, as they're designed to penetrate and seal surfaces.</li>
-                                    </ul>
-                                    <p>For best results, we recommend:</p>
-                                    <ul>
-                                        <li>Proper surface preparation (cleaning, sanding, and priming when necessary)</li>
-                                        <li>Using high-quality brushes and rollers</li>
-                                        <li>Applying two thin coats rather than one thick coat</li>
-                                        <li>Following the specific product instructions for optimal coverage</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 6 -->
-                        <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 250, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                            <h3 class="accordion-header" id="faqHeading6">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
-                                    Are your paints environmentally friendly?
-                                </button>
-                            </h3>
-                            <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes, we are committed to environmental responsibility and offer a range of eco-friendly paint options:</p>
-                                    <ul>
-                                        <li><strong>Low-VOC and Zero-VOC Paints:</strong> Our premium interior lines contain minimal or no volatile organic compounds, improving indoor air quality.</li>
-                                        <li><strong>Water-Based Formulas:</strong> Most of our products are water-based, making cleanup easier and reducing environmental impact.</li>
-                                        <li><strong>Sustainable Packaging:</strong> We use recycled materials in our packaging and offer recycling programs for empty containers.</li>
-                                        <li><strong>Green Manufacturing:</strong> Our production processes prioritize energy efficiency and waste reduction.</li>
-                                    </ul>
-                                    <p>Look for our "EcoChoice" label to easily identify our most environmentally responsible products. Our staff can help you select the right eco-friendly option for your project.</p>
-                                </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="accordion-header" id="faqHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                How do I pick the right paint color for my house?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Choosing colors is easy when you think about a few simple things:</p>
+                                <ul>
+                                    <li><strong>Room size:</strong> Light colors make small rooms look bigger. Dark colors make big rooms feel cozy.</li>
+                                    <li><strong>Sunlight:</strong> Does the room get lots of sun? Dark colors look good in sunny rooms.</li>
+                                    <li><strong>Room use:</strong> Is it a bedroom, kitchen, or living room? We can suggest good colors for each.</li>
+                                    <li><strong>Your taste:</strong> What colors do you like? We have many options.</li>
+                                </ul>
+                                <p><strong>Example:</strong> For a bedroom, you can try one dark wall and three light walls. It looks nice!</p>
+                                <p>Come to our shop and we'll help you choose. We have color samples you can take home.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Contact CTA -->
-                    <div class="faq-contact" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <h3 class="text-dark-gray mb-3">Still have questions?</h3>
-                        <p class="mb-4">Our paint experts are here to help you with any questions about color selection, application techniques, or product specifications.</p>
-                        <a href="#contact" class="btn btn-medium btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge" style="background-color: #FFD700; color: #111827; padding: 15px 35px;">
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 50, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="accordion-header" id="faqHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                What kinds of paint finishes do you have?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>We have 5 main types of paint finishes:</p>
+                                <ul>
+                                    <li><strong>Matte (Flat):</strong> No shine. Hides wall marks well. Good for ceilings and bedrooms.</li>
+                                    <li><strong>Eggshell:</strong> Little shine. Easy to clean. Good for living rooms.</li>
+                                    <li><strong>Satin:</strong> Soft shine. Easy to wipe clean. Best for kitchens and bathrooms.</li>
+                                    <li><strong>Semi-Gloss:</strong> Shiny. Very strong. Good for doors and windows.</li>
+                                    <li><strong>High-Gloss:</strong> Very shiny. Super strong. For furniture and cabinets.</li>
+                                </ul>
+                                <p><strong>Simple tip:</strong> More shine = easier to clean. Less shine = hides wall marks better.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="accordion-header" id="faqHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                How long will your paint last on my walls?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Our paints are made to last long:</p>
+                                <ul>
+                                    <li><strong>Inside paint:</strong> 5-10 years</li>
+                                    <li><strong>Outside paint:</strong> 7-15 years</li>
+                                </ul>
+                                <p><strong>What makes paint last longer:</strong></p>
+                                <ul>
+                                    <li>Clean walls before painting</li>
+                                    <li>Use our primer first</li>
+                                    <li>Paint 2 thin coats (not 1 thick coat)</li>
+                                    <li>Less sun = longer lasting paint</li>
+                                </ul>
+                                <p>Our Serberlin premium paints last longer because we use quality materials.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 150, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="accordion-header" id="faqHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                Can you match a color I already have?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes! We can match any color you bring.</p>
+                                <p><strong>Bring us:</strong></p>
+                                <ul>
+                                    <li>A piece of cloth or curtain</li>
+                                    <li>A photo on your phone</li>
+                                    <li>Old paint from your wall</li>
+                                    <li>Anything with the color you want</li>
+                                </ul>
+                                <p><strong>What we do:</strong></p>
+                                <ul>
+                                    <li>Use a machine to read the color</li>
+                                    <li>Mix paint until it matches perfectly</li>
+                                    <li>Give you a small sample to test</li>
+                                    <li>Keep your color formula for later use</li>
+                                </ul>
+                                <p>Custom colors may take 1-2 days to make. Small fee may apply.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="accordion-header" id="faqHeading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                How much area can 1 gallon of paint cover?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>This depends on your wall, but here's a simple guide:</p>
+                                <ul>
+                                    <li><strong>1 gallon of inside paint:</strong> Covers about 2 small bedrooms (walls only)</li>
+                                    <li><strong>1 gallon of outside paint:</strong> Covers about 1½ small bedrooms outside</li>
+                                    <li><strong>1 gallon of primer:</strong> Covers about 1 small bedroom</li>
+                                </ul>
+                                <p><strong>Pro tips:</strong></p>
+                                <ul>
+                                    <li>Rough walls need more paint</li>
+                                    <li>Always buy a little extra for touch-ups</li>
+                                    <li>Dark colors may need 3 coats</li>
+                                    <li>Our staff will help you calculate how much you need</li>
+                                </ul>
+                                <p>Bring your room measurements to our shop for exact calculations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="accordion-item" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 250, &quot;staggervalue&quot;: 100, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                        <h3 class="accordion-header" id="faqHeading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                Is your paint safe for my family?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes! Our paints are family-safe. We have special safe paints too.</p>
+                                <p><strong>Our safe paint options:</strong></p>
+                                <ul>
+                                    <li><strong>Low-smell paint:</strong> Little or no paint smell. Safe for babies and sick people.</li>
+                                    <li><strong>Water-based paint:</strong> Easy to clean with water. No strong chemicals.</li>
+                                    <li><strong>Mold-resistant paint:</strong> Stops mold growth. Good for bathrooms.</li>
+                                    <li><strong>Washable paint:</strong> Easy to clean marks. Good for kids' rooms.</li>
+                                </ul>
+                                <p><strong>Look for our "Family Safe" label.</strong> These paints:</p>
+                                <ul>
+                                    <li>Have no strong smell</li>
+                                    <li>Dry quickly</li>
+                                    <li>Are safe for children's rooms</li>
+                                    <li>You can sleep in the room same day</li>
+                                </ul>
+                                <p>Ask our staff for the safest paint for your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="faq-contact text-center mt-5" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h3 class="text-dark-gray mb-3">Need more help?</h3>
+                    <p class="mb-4">Our paint experts are ready to answer any question. Visit our shop or call us.</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="tel:08034346003" class="btn btn-medium btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge" style="background-color: #FFD700; color: #111827; padding: 12px 30px;">
                             <span>
-                                <span class="btn-text">Contact Our Experts</span>
+                                <span class="btn-text">Call Us: 08034346003</span>
+                            </span>
+                        </a>
+                        <a href="#contact" class="btn btn-medium btn-outline-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge" style="padding: 12px 30px;">
+                            <span>
+                                <span class="btn-text">Visit Our Shop</span>
                             </span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer-dark bg-footer pt-5 pb-3">
@@ -1725,8 +1882,7 @@
                             <ul class="list-unstyled">
                                 <li class="mb-2"><a href="#contact" class="text-light text-decoration-none hover-text-primary">Contact Us</a></li>
                                 <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">FAQs</a></li>
-                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">Shipping Info</a></li>
-                                <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-text-primary">Returns</a></li>
+                            
                             </ul>
                         </div>
                         
@@ -1736,6 +1892,11 @@
                                 <p class="mb-2">
                                     <i class="fas fa-map-marker-alt me-2"></i>
                                    Block 18, Baptist church street, Magodo GRA. Lagos State, Nigeria
+                                </p>
+
+                                 <p class="mb-2">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Factory: Wawa Arepo, Banku Estate, Ibadan Expressway
                                 </p>
                                 <p class="mb-2">
                                     <i class="fas fa-phone me-2"></i>
@@ -1818,7 +1979,7 @@
         </div>
     </footer>
 
-    <!-- Sam the Painter Chatbot -->
+    <!-- Sam the Painter Chatbot - ENHANCED VERSION -->
     <div class="chatbot-container">
         <div class="chatbot-window">
             <div class="chatbot-header">
@@ -1828,19 +1989,57 @@
                 </div>
                 <button class="chatbot-close">&times;</button>
             </div>
+            
+            <div class="chatbot-status">
+                <span id="chatbotStatus">Online • Ready to help</span>
+            </div>
+            
             <div class="chatbot-messages" id="chatMessages">
                 <div class="message message-bot">
-                    Hi there! 👋 I'm Sam, your paint expert at Serberlin Global Services. How can I help you with your painting project today?
+                    <h4>Hello! I'm Sam, Your Paint Expert 🎨</h4>
+                    Welcome to Serberlin Global Services! I'm here to help you with:
+                    <ul>
+                        <li>Color selection and matching</li>
+                        <li>Paint type recommendations</li>
+                        <li>Technical support and application tips</li>
+                        <li>Project estimates and quotes</li>
+                        <li>Product information and comparisons</li>
+                    </ul>
+                    How can I assist you with your painting project today?
                 </div>
             </div>
-            <div class="quick-options">
-                <button class="quick-option" data-query="color selection">Color Selection</button>
-                <button class="quick-option" data-query="paint types">Paint Types</button>
-                <button class="quick-option" data-query="pricing">Pricing & Quotes</button>
-                <button class="quick-option" data-query="technical support">Technical Support</button>
+            
+            <div class="chatbot-suggestions">
+                <div class="suggestion-title">Quick Suggestions:</div>
+                <div class="suggestion-buttons">
+                    <button class="suggestion-btn" data-query="best paint for kitchen">Kitchen Paint</button>
+                    <button class="suggestion-btn" data-query="exterior paint recommendations">Exterior Paint</button>
+                    <button class="suggestion-btn" data-query="color trends 2024">2024 Trends</button>
+                    <button class="suggestion-btn" data-query="how to calculate paint quantity">Calculate Paint</button>
+                </div>
             </div>
+            
+            <div class="chatbot-actions">
+                <button class="chatbot-action-btn" id="clearChat">
+                    <i class="fas fa-trash-alt"></i> Clear Chat
+                </button>
+                <button class="chatbot-action-btn" id="saveChat">
+                    <i class="fas fa-save"></i> Save Chat
+                </button>
+                <button class="chatbot-action-btn" id="contactExpert">
+                    <i class="fas fa-user-tie"></i> Live Expert
+                </button>
+            </div>
+            
+            <div class="quick-options">
+                <button class="quick-option" data-query="color selection">🎨 Color Selection</button>
+                <button class="quick-option" data-query="paint types">🖌️ Paint Types</button>
+                <button class="quick-option" data-query="pricing">💰 Pricing</button>
+                <button class="quick-option" data-query="technical support">🔧 Tech Support</button>
+            </div>
+            
             <div class="chatbot-input">
-                <input type="text" id="chatInput" placeholder="Type your question here...">
+                <input type="text" id="chatInput" placeholder="Ask about colors, paints, or your project...">
                 <button id="sendMessage">
                     <i class="fas fa-paper-plane"></i>
                 </button>
@@ -1987,9 +2186,10 @@
         });
     </script>
 
-    <!-- Sam the Painter Chatbot Script -->
+    <!-- Enhanced Sam the Painter Chatbot Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
             const chatbotToggle = document.querySelector('.chatbot-toggle');
             const chatbotWindow = document.querySelector('.chatbot-window');
             const chatbotClose = document.querySelector('.chatbot-close');
@@ -1997,8 +2197,19 @@
             const chatInput = document.getElementById('chatInput');
             const sendMessageBtn = document.getElementById('sendMessage');
             const quickOptions = document.querySelectorAll('.quick-option');
+            const suggestionBtns = document.querySelectorAll('.suggestion-btn');
+            const clearChatBtn = document.getElementById('clearChat');
+            const saveChatBtn = document.getElementById('saveChat');
+            const contactExpertBtn = document.getElementById('contactExpert');
+            const chatbotStatus = document.getElementById('chatbotStatus');
             
-            // Knowledge base for Sam the Painter
+            // Chat state
+            let chatHistory = [];
+            let userName = '';
+            let userProject = '';
+            let isFirstInteraction = true;
+            
+            // Enhanced Knowledge Base for Intelligent Responses
             const knowledgeBase = {
                 greetings: [
                     "Hello! I'm Sam, your paint expert at Serberlin Global Services. How can I assist you today?",
@@ -2006,100 +2217,455 @@
                     "Welcome! I'm Sam, your virtual paint consultant. How can I make your painting project easier?"
                 ],
                 
+                "best paint for kitchen": {
+                    response: `For kitchens, I recommend our **Serberlin KitchenGuard Premium** line. Here's why:
+
+**Key Features:**
+• **Moisture Resistance:** Formulated to withstand steam and humidity
+• **Easy Cleaning:** Wipe clean with mild detergent
+• **Mold & Mildew Protection:** Built-in inhibitors
+• **Stain Resistance:** Repels cooking oils and food spills
+• **Durability:** Withstands frequent cleaning
+
+**Recommended Finish:** Semi-gloss or satin
+**Coverage:** 350-400 sq ft per gallon
+**Drying Time:** 2 hours touch dry, 4 hours recoat
+
+Would you like specific color recommendations for kitchens?`,
+                    followUp: "Tell me about your kitchen's lighting and style for personalized suggestions!"
+                },
+                
+                "exterior paint recommendations": {
+                    response: `For exterior projects, our **Serberlin WeatherShield Pro** is the top choice:
+
+**Benefits:**
+• **UV Protection:** Resists fading from sunlight
+• **Weather Resistance:** Withstands rain, snow, and temperature changes
+• **Flexibility:** Expands/contracts with temperature changes
+• **Mildew Resistance:** Prevents mold growth
+• **Longevity:** 10-15 year durability guarantee
+
+**Application Tips:**
+1. Surface prep is crucial - clean and prime
+2. Apply in 50-90°F weather
+3. Avoid painting in direct sunlight
+4. Use two coats for best protection
+
+What type of exterior surface are you painting?`,
+                    followUp: "Share your surface type (wood, stucco, brick, etc.) for specific advice!"
+                },
+                
+                "color trends 2024": {
+                    response: `**2024 Color Trends from Serberlin Global Services:**
+
+**Top Color Families:**
+1. **Earthy Neutrals:** Warm beiges, terracotta, olive greens
+2. **Sky Blues:** Soft, calming blues inspired by nature
+3. **Rich Jewel Tones:** Emerald green, sapphire blue, amethyst
+4. **Warm Whites:** Creamy, inviting whites with undertones
+5. **Muted Pastels:** Soft lavender, blush pink, sage green
+
+**Popular Combinations:**
+• **Coastal Calm:** Sky blue + warm white + sandy beige
+• **Modern Earth:** Terracotta + olive green + charcoal
+• **Jewel Box:** Emerald green + brass accents + warm wood
+
+**Pro Tip:** Consider your room's lighting and purpose when choosing colors!`,
+                    followUp: "Which room are you planning to paint? I can suggest trending colors specifically for that space!"
+                },
+                
+                "how to calculate paint quantity": {
+                    response: `**Paint Calculator Guide:**
+
+**Step-by-Step Calculation:**
+1. **Measure Walls:** (Length + Width) × 2 × Height = Total wall area
+2. **Subtract Openings:** Deduct windows and doors (typically 20 sq ft each)
+3. **Consider Coverage:** Our paints cover 350-400 sq ft per gallon
+4. **Account for Coats:** Multiply by number of coats (usually 2)
+
+**Example:**
+• Room: 12ft × 15ft with 8ft ceilings
+• Wall area: (12+15)×2×8 = 432 sq ft
+• Subtract openings: 432 - 40 = 392 sq ft
+• For 2 coats: 392 × 2 = 784 sq ft
+• Paint needed: 784 ÷ 350 = 2.24 gallons → **3 gallons**
+
+Want me to calculate for your specific room dimensions?`,
+                    followUp: "Share your room measurements and I'll calculate exactly how much paint you need!"
+                },
+                
                 "color selection": {
-                    response: "I'd love to help you with color selection! Here are some tips:\n\n1. **Consider lighting**: Natural light shows true colors, while artificial light can alter them.\n2. **Room purpose**: Calm colors for bedrooms, vibrant colors for creative spaces.\n3. **Sample testing**: Always test colors on your walls before committing.\n4. **Color psychology**: Blues for calm, yellows for energy, greens for balance.\n\nWould you like specific recommendations for a particular room?",
-                    followUp: "Tell me which room you're painting and I'll suggest some perfect color options!"
+                    response: `**Color Selection Guide:**
+
+**Consider These Factors:**
+1. **Room Purpose:**
+   • Bedrooms: Calming colors (blues, greens, neutrals)
+   • Kitchens: Clean, bright colors (whites, yellows, light blues)
+   • Offices: Focus-enhancing colors (greens, grays, blues)
+
+2. **Lighting Conditions:**
+   • North-facing rooms: Warm colors to add warmth
+   • South-facing rooms: Cool colors to balance brightness
+   • Artificial light: Test colors under your actual lighting
+
+3. **Room Size:**
+   • Small rooms: Light colors to create space
+   • Large rooms: Darker colors for coziness
+
+4. **Color Psychology:**
+   • Blue: Calm, peaceful
+   • Green: Balanced, natural
+   • Yellow: Energetic, cheerful
+   • Gray: Sophisticated, neutral
+
+**Pro Tip:** Get sample pots and test on your walls first!`,
+                    followUp: "Tell me about your room and I'll suggest specific colors!"
                 },
                 
                 "paint types": {
-                    response: "We offer a wide range of paint types for different applications:\n\n**Interior Paints:**\n• **Matte/Flat** - Hides imperfections, great for ceilings\n• **Eggshell** - Low sheen, easy to clean\n• **Satin** - Soft sheen, perfect for kitchens/bathrooms\n• **Semi-Gloss** - Durable, ideal for trim and doors\n\n**Exterior Paints:**\n• **Acrylic Latex** - Weather resistant, flexible\n• **Elastomeric** - Stretches with temperature changes\n• **Specialty Coatings** - For metal, concrete, etc.\n\nWhat surface are you planning to paint?",
-                    followUp: "Let me know what surface you're working with and I'll recommend the perfect paint type!"
+                    response: `**Serberlin Paint Types Guide:**
+
+**Interior Paints:**
+1. **Matte/Flat:** Non-reflective, hides imperfections
+   • Best for: Ceilings, low-traffic areas
+   • Coverage: 400 sq ft/gal
+
+2. **Eggshell:** Low sheen, slight reflectivity
+   • Best for: Living rooms, bedrooms
+   • Durability: Good
+
+3. **Satin:** Soft sheen, washable
+   • Best for: Kitchens, bathrooms, hallways
+   • Durability: Excellent
+
+4. **Semi-Gloss:** Reflective, very durable
+   • Best for: Trim, doors, cabinets
+   • Durability: Superior
+
+5. **High-Gloss:** Maximum shine
+   • Best for: Furniture, accent pieces
+   • Durability: Premium
+
+**Specialty Paints:**
+• **Kitchen & Bath:** Mold/mildew resistant
+• **Ceiling Paint:** Splatter-resistant formula
+• **Trim Paint:** Smooth application, quick drying`,
+                    followUp: "What surface are you painting? I'll recommend the perfect paint type!"
                 },
                 
                 "pricing": {
-                    response: "Our pricing varies based on:\n\n1. **Paint Type**: Premium lines vs. standard options\n2. **Finish**: Different finishes have different price points\n3. **Quantity**: Bulk discounts available for large projects\n4. **Custom Colors**: May have additional charges\n\nFor an accurate quote, I recommend:\n• Measuring your space (walls, ceilings)\n• Choosing your preferred paint type\n• Selecting your colors\n\nWould you like me to connect you with our sales team for a detailed quote?",
-                    followUp: "I can help you calculate an estimate if you share the square footage you need to cover!"
+                    response: `**Serberlin Pricing Structure:**
+
+**Product Lines:**
+1. **Essential Range:** $25-35/gallon
+   • Good coverage, basic colors
+   • 5-year durability guarantee
+
+2. **Premium Range:** $35-50/gallon
+   • Excellent coverage, full color palette
+   • 10-year durability guarantee
+   • Low-VOC options available
+
+3. **Professional Range:** $50-75/gallon
+   • Superior coverage and durability
+   • Custom color matching included
+   • Zero-VOC, eco-friendly options
+   • 15-year durability guarantee
+
+**Factors Affecting Price:**
+• Paint type (interior/exterior/specialty)
+• Finish (matte/satin/gloss)
+• Color (custom vs. standard)
+• Quantity (bulk discounts available)
+
+**Free Services:**
+• Color consultation
+• Sample pots (small fee)
+• Technical support
+• Application guidance`,
+                    followUp: "Tell me about your project for a more accurate estimate!"
                 },
                 
                 "technical support": {
-                    response: "Technical issues? I'm here to help! Common solutions:\n\n**Preparation Problems:**\n• Ensure surfaces are clean, dry, and free of grease\n• Use appropriate primer for your surface type\n\n**Application Issues:**\n• Apply paint in consistent strokes\n• Maintain a wet edge to avoid lap marks\n• Use high-quality brushes/rollers\n\n**Drying/Curing:**\n• Follow recommended drying times between coats\n• Ensure proper ventilation\n• Maintain optimal temperature/humidity\n\nWhat specific issue are you experiencing?",
-                    followUp: "Describe your painting issue and I'll provide step-by-step troubleshooting!"
+                    response: `**Technical Support Solutions:**
+
+**Common Issues & Solutions:**
+
+**1. Paint Won't Stick:**
+• Cause: Greasy or dirty surface
+• Solution: Clean with TSP, rinse, dry, then prime
+
+**2. Brush Marks Visible:**
+• Cause: Poor quality brush or thick application
+• Solution: Use high-quality brush, apply thinner coats
+
+**3. Paint Peeling:**
+• Cause: Moisture or poor surface prep
+• Solution: Remove loose paint, dry surface, prime, repaint
+
+**4. Color Looks Different:**
+• Cause: Lighting changes or undertones
+• Solution: Test colors first, consider primer color
+
+**5. Drying Too Fast/Slow:**
+• Cause: Temperature/humidity issues
+• Solution: Paint in 50-90°F, 40-70% humidity
+
+**Application Tips:**
+• Always use primer on new surfaces
+• Stir paint thoroughly before use
+• Maintain wet edge while painting
+• Allow proper drying time between coats`,
+                    followUp: "What specific issue are you experiencing? I'll provide detailed troubleshooting!"
                 },
                 
-                "color matching": {
-                    response: "Our custom color matching service is excellent! We can match:\n\n• Existing paint colors\n• Fabric or upholstery samples\n• Photographs\n• Any physical color sample\n\n**Process:**\n1. Bring your sample to our store\n2. Our experts analyze it with digital color technology\n3. We create a custom mix\n4. Provide a test sample for verification\n\nDo you have a specific color you'd like us to match?",
-                    followUp: "Bring your color sample to our nearest location for perfect matching!"
+                "custom color matching": {
+                    response: `**Custom Color Matching Service:**
+
+**How It Works:**
+1. **Bring Sample:** Fabric, photo, or existing paint chip
+2. **Digital Analysis:** Our scanner creates precise formula
+3. **Test Sample:** Small batch for verification
+4. **Adjustment:** Fine-tune if needed
+5. **Final Mix:** Your custom color created
+
+**Turnaround Time:**
+• Standard: 24-48 hours
+• Rush: Same day (additional fee)
+
+**Minimum Order:**
+• Interior: 1 gallon
+• Exterior: 5 gallons
+
+**Color Documentation:**
+We provide a custom color card with your formula for future reference.
+
+**Price:**
+• $15 matching fee (waived with 5+ gallon order)
+• Paint priced at premium range rate`,
+                    followUp: "What color would you like us to match? Bring your sample to our nearest location!"
                 },
                 
-                "delivery": {
-                    response: "We offer several delivery options:\n\n**Standard Delivery:** 3-5 business days\n**Express Delivery:** 1-2 business days (extra charge)\n**Bulk Delivery:** Special arrangements for large orders\n**Store Pickup:** Available at all our locations\n\nDelivery costs depend on:\n• Order size and weight\n• Delivery location\n• Delivery speed\n\nWould you like to check delivery options for your area?",
-                    followUp: "Share your location and order size for specific delivery information!"
+                "eco friendly options": {
+                    response: `**Eco-Friendly Paint Options:**
+
+**Serberlin EcoChoice Range:**
+• **Zero-VOC:** No volatile organic compounds
+• **Low-VOC:** Minimal emissions
+• **Natural Ingredients:** Plant-based binders
+• **Recycled Packaging:** 30% post-consumer recycled plastic
+• **Water-Based:** Easy cleanup, less environmental impact
+
+**Certifications:**
+• Green Seal Certified
+• LEED Compliant
+• Indoor Air Quality Certified
+
+**Performance:**
+• Same coverage and durability as traditional paints
+• Quick drying (1-2 hours)
+• Low odor during application
+• Available in all sheens and colors
+
+**Price Premium:**
+• 10-15% more than standard paints
+• Often eligible for green building credits`,
+                    followUp: "Are you looking for interior or exterior eco-friendly paints?"
                 },
                 
-                "environmental": {
-                    response: "We're committed to sustainability! Our eco-friendly options include:\n\n**Low-VOC Paints:** Minimal volatile organic compounds\n**Zero-VOC Paints:** No harmful emissions\n**Natural Paints:** Made from plant-based ingredients\n**Recycled Packaging:** Sustainable containers\n**Water-Based Formulas:** Easier cleanup, less environmental impact\n\nOur 'EcoChoice' label identifies our greenest products. Would you like recommendations for eco-friendly paints?",
-                    followUp: "I can suggest specific eco-friendly products for your project!"
+                "delivery and shipping": {
+                    response: `**Delivery & Shipping Options:**
+
+**Local Delivery (within 50 miles):**
+• **Standard:** 2-3 business days - $15
+• **Express:** Next business day - $25
+• **Same Day:** By 5 PM - $35 (order by 12 PM)
+
+**Nationwide Shipping:**
+• **Ground:** 5-7 business days
+• **Expedited:** 2-3 business days
+• **Freight:** For bulk orders (5+ gallons)
+
+**Free Shipping:**
+• Orders over $200
+• Professional contractor accounts
+• Repeat customers (after 3 orders)
+
+**Order Processing:**
+• In-stock items: Ships within 24 hours
+• Custom colors: 48 hours processing
+• Large orders: Contact for freight quote
+
+**Tracking:**
+All orders include real-time tracking and delivery updates.`,
+                    followUp: "What's your location? I can check specific delivery options for you!"
                 },
                 
-                "application tips": {
-                    response: "Great painting results start with proper application:\n\n**Before Painting:**\n1. Clean surfaces thoroughly\n2. Repair cracks and holes\n3. Sand glossy surfaces\n4. Use appropriate primer\n\n**During Painting:**\n1. Use high-quality tools\n2. Apply in consistent strokes\n3. Maintain wet edges\n4. Allow proper drying time between coats\n\n**After Painting:**\n1. Clean tools immediately\n2. Store leftover paint properly\n3. Dispose of waste responsibly\n\nNeed tips for a specific surface type?",
-                    followUp: "What type of surface are you painting? I'll provide tailored advice!"
+                "warranty and guarantees": {
+                    response: `**Serberlin Guarantees:**
+
+**Product Warranty:**
+1. **Essential Range:** 5-year durability guarantee
+2. **Premium Range:** 10-year durability guarantee
+3. **Professional Range:** 15-year durability guarantee
+
+**Coverage Includes:**
+• Fading resistance
+• Peeling/flaking prevention
+• Mildew resistance (where applicable)
+• Color consistency
+
+**Requirements for Coverage:**
+• Proper surface preparation
+• Correct application per instructions
+• Use of recommended primers
+• Suitable environmental conditions
+
+**Satisfaction Guarantee:**
+• 30-day return policy (unused paint)
+• Color adjustment service
+• Technical support for application issues
+
+**How to Make a Claim:**
+1. Contact customer service
+2. Provide purchase details
+3. Photos of the issue
+4. Our team will assess and resolve`,
+                    followUp: "Do you have a specific warranty question or concern?"
                 },
                 
-                fallback: "I'm not sure about that specific question, but I can definitely help with:\n• Color selection and matching\n• Paint type recommendations\n• Application techniques\n• Troubleshooting painting issues\n• Product information and pricing\n\nWhat else can I assist you with?"
+                fallback: {
+                    response: `I understand you're asking about something specific. While I'm trained primarily on paint-related topics, I can help you with:
+
+**Paint-Specific Questions:**
+• Color selection and matching
+• Paint type recommendations
+• Application techniques
+• Troubleshooting painting issues
+• Product specifications and comparisons
+• Project planning and estimates
+
+**Related Topics I Can Discuss:**
+• Surface preparation
+• Tool selection (brushes, rollers)
+• Safety precautions
+• Cleanup and disposal
+• Maintenance tips
+
+**If I Can't Answer:**
+I'll connect you with one of our human paint experts who can provide more detailed assistance.
+
+What paint-related question can I help you with today?`,
+                    followUp: "Try asking about colors, paints, or your specific painting project!"
+                }
             };
             
-            // Common questions mapping
-            const commonQuestions = {
-                "hello": "greetings",
-                "hi": "greetings",
-                "hey": "greetings",
-                "greetings": "greetings",
-                "colors": "color selection",
-                "colour": "color selection",
-                "color": "color selection",
-                "paint": "paint types",
-                "types": "paint types",
-                "finish": "paint types",
-                "price": "pricing",
-                "cost": "pricing",
-                "quote": "pricing",
-                "expensive": "pricing",
-                "technical": "technical support",
-                "problem": "technical support",
-                "issue": "technical support",
-                "match": "color matching",
-                "custom": "color matching",
-                "delivery": "delivery",
-                "shipping": "delivery",
-                "deliver": "delivery",
-                "eco": "environmental",
-                "green": "environmental",
-                "environment": "environmental",
-                "apply": "application tips",
-                "brush": "application tips",
-                "roller": "application tips",
-                "how to paint": "application tips"
-            };
+            // Context-aware response generator
+            function generateIntelligentResponse(userInput, context = {}) {
+                const input = userInput.toLowerCase().trim();
+                
+                // Check for greetings
+                if (input.match(/\b(hello|hi|hey|greetings|good morning|good afternoon)\b/)) {
+                    return getRandomResponse(knowledgeBase.greetings);
+                }
+                
+                // Check for thank you
+                if (input.match(/\b(thanks|thank you|appreciate it|much appreciated)\b/)) {
+                    return "You're very welcome! 😊 Is there anything else I can help you with regarding your painting project?";
+                }
+                
+                // Check for goodbye
+                if (input.match(/\b(bye|goodbye|see you|talk later|gotta go)\b/)) {
+                    return "Thanks for chatting! Remember, I'm here whenever you need paint advice. Have a colorful day! 🎨";
+                }
+                
+                // Check for name introduction
+                if (input.match(/\b(my name is|i am|i'm called|call me)\b/)) {
+                    const nameMatch = input.match(/\b(my name is|i am|i'm called|call me)\s+([a-zA-Z]+)/);
+                    if (nameMatch && nameMatch[2]) {
+                        userName = nameMatch[2];
+                        return `Nice to meet you, ${userName}! I'm Sam, your paint expert. How can I help you with your painting project today?`;
+                    }
+                }
+                
+                // Check for project description
+                if (input.match(/\b(painting|project|renovating|redecorating)\b/)) {
+                    userProject = input;
+                    return `I understand you're working on a painting project. That's exciting! 🎨 Could you tell me more about what you're planning to paint? (e.g., living room, kitchen exterior, furniture, etc.)`;
+                }
+                
+                // Intelligent topic matching
+                const topics = {
+                    'kitchen': 'best paint for kitchen',
+                    'exterior|outside|outdoor': 'exterior paint recommendations',
+                    'trend|fashion|latest|2024': 'color trends 2024',
+                    'calculate|quantity|how much|gallons': 'how to calculate paint quantity',
+                    'color|colour|shade|hue|tint': 'color selection',
+                    'type|finish|matte|gloss|satin': 'paint types',
+                    'price|cost|quote|estimate|expensive': 'pricing',
+                    'problem|issue|trouble|technical|help': 'technical support',
+                    'match|custom|special|unique': 'custom color matching',
+                    'eco|green|environment|natural|sustainable': 'eco friendly options',
+                    'deliver|ship|transport|order': 'delivery and shipping',
+                    'warranty|guarantee|return|refund': 'warranty and guarantees'
+                };
+                
+                for (const [pattern, topic] of Object.entries(topics)) {
+                    if (new RegExp(pattern, 'i').test(input)) {
+                        const topicData = knowledgeBase[topic];
+                        if (topicData) {
+                            // Add personalized touch if we have user info
+                            let response = topicData.response;
+                            if (userName) {
+                                response = `Hi ${userName}! ` + response;
+                            }
+                            if (userProject) {
+                                response += `\n\nBased on your project ("${userProject.substring(0, 50)}..."), I'd recommend...`;
+                            }
+                            return response;
+                        }
+                    }
+                }
+                
+                // If no match found, use fallback with context
+                let fallback = knowledgeBase.fallback.response;
+                if (userName) {
+                    fallback = `Hi ${userName}! ` + fallback;
+                }
+                return fallback;
+            }
+            
+            // Helper function
+            function getRandomResponse(responses) {
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
             
             // Toggle chatbot window
             chatbotToggle.addEventListener('click', function() {
                 chatbotWindow.classList.toggle('active');
                 if (chatbotWindow.classList.contains('active')) {
                     chatInput.focus();
+                    updateChatbotStatus('Online • Ready to help');
                 }
             });
             
             chatbotClose.addEventListener('click', function() {
                 chatbotWindow.classList.remove('active');
+                updateChatbotStatus('Online • Click to chat');
             });
             
             // Close chatbot when clicking outside
             document.addEventListener('click', function(event) {
                 if (!chatbotWindow.contains(event.target) && !chatbotToggle.contains(event.target)) {
                     chatbotWindow.classList.remove('active');
+                    updateChatbotStatus('Online • Click to chat');
                 }
             });
+            
+            // Update chatbot status
+            function updateChatbotStatus(status) {
+                chatbotStatus.textContent = status;
+            }
             
             // Send message function
             function sendMessage() {
@@ -2107,6 +2673,7 @@
                 if (message) {
                     // Add user message
                     addMessage(message, 'user');
+                    chatHistory.push({ type: 'user', content: message });
                     
                     // Clear input
                     chatInput.value = '';
@@ -2117,10 +2684,23 @@
                     // Process and respond after delay
                     setTimeout(() => {
                         removeTypingIndicator();
-                        const response = generateResponse(message.toLowerCase());
+                        const response = generateIntelligentResponse(message, {
+                            name: userName,
+                            project: userProject,
+                            history: chatHistory.slice(-5) // Last 5 messages for context
+                        });
+                        
                         addMessage(response, 'bot');
+                        chatHistory.push({ type: 'bot', content: response });
+                        
+                        // Add suggestions based on conversation
+                        if (isFirstInteraction) {
+                            addSuggestions();
+                            isFirstInteraction = false;
+                        }
+                        
                         scrollToBottom();
-                    }, 1000 + Math.random() * 1000);
+                    }, 800 + Math.random() * 800); // Variable delay for natural feel
                 }
             }
             
@@ -2128,7 +2708,13 @@
             function addMessage(text, sender) {
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message message-${sender}`;
-                messageDiv.textContent = text;
+                
+                // Format text with basic markdown
+                let formattedText = text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\n/g, '<br>');
+                
+                messageDiv.innerHTML = formattedText;
                 chatMessages.appendChild(messageDiv);
                 scrollToBottom();
             }
@@ -2155,49 +2741,37 @@
                 }
             }
             
-            // Generate response based on user input
-            function generateResponse(userInput) {
-                // Check for greetings
-                if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) {
-                    const greetings = knowledgeBase.greetings;
-                    return greetings[Math.floor(Math.random() * greetings.length)];
-                }
+            // Add contextual suggestions
+            function addSuggestions() {
+                const suggestions = [
+                    { text: "Get color samples", query: "how to get color samples" },
+                    { text: "Surface preparation", query: "how to prepare surfaces for painting" },
+                    { text: "Brush vs roller", query: "when to use brush vs roller" },
+                    { text: "Drying times", query: "how long does paint take to dry" }
+                ];
                 
-                // Check for thank you
-                if (userInput.includes('thank')) {
-                    return "You're welcome! Is there anything else I can help you with regarding your painting project?";
-                }
+                const suggestionDiv = document.createElement('div');
+                suggestionDiv.className = 'message message-bot suggestion';
+                suggestionDiv.innerHTML = `
+                    <strong>Based on our conversation, you might also want to know:</strong><br>
+                    <div class="suggestion-buttons" style="margin-top: 10px;">
+                        ${suggestions.map(s => 
+                            `<button class="suggestion-btn" data-query="${s.query}">${s.text}</button>`
+                        ).join('')}
+                    </div>
+                `;
                 
-                // Check for goodbye
-                if (userInput.includes('bye') || userInput.includes('goodbye')) {
-                    return "Thanks for chatting! Remember, I'm here whenever you need paint advice. Have a colorful day! 🎨";
-                }
+                chatMessages.appendChild(suggestionDiv);
+                scrollToBottom();
                 
-                // Check for specific topics
-                for (const [keyword, topic] of Object.entries(commonQuestions)) {
-                    if (userInput.includes(keyword)) {
-                        if (topic === 'greetings') {
-                            const greetings = knowledgeBase.greetings;
-                            return greetings[Math.floor(Math.random() * greetings.length)];
-                        }
-                        const topicData = knowledgeBase[topic];
-                        if (topicData) {
-                            return topicData.response;
-                        }
-                    }
-                }
-                
-                // Check direct topic matches
-                for (const [topic, data] of Object.entries(knowledgeBase)) {
-                    if (topic !== 'greetings' && topic !== 'fallback') {
-                        if (userInput.includes(topic.replace(' ', ''))) {
-                            return data.response;
-                        }
-                    }
-                }
-                
-                // Fallback response
-                return knowledgeBase.fallback;
+                // Add event listeners to new suggestion buttons
+                suggestionDiv.querySelectorAll('.suggestion-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const query = this.getAttribute('data-query');
+                        chatInput.value = query;
+                        sendMessage();
+                    });
+                });
             }
             
             // Scroll to bottom of chat
@@ -2223,15 +2797,104 @@
                 });
             });
             
-            // Auto-open chatbot on page load after 10 seconds
+            // Suggestion buttons
+            suggestionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const query = this.getAttribute('data-query');
+                    chatInput.value = query;
+                    sendMessage();
+                });
+            });
+            
+            // Clear chat button
+            clearChatBtn.addEventListener('click', function() {
+                if (confirm('Clear chat history?')) {
+                    chatMessages.innerHTML = `
+                        <div class="message message-bot">
+                            <h4>Hello! I'm Sam, Your Paint Expert 🎨</h4>
+                            Welcome to Serberlin Global Services! I'm here to help you with:
+                            <ul>
+                                <li>Color selection and matching</li>
+                                <li>Paint type recommendations</li>
+                                <li>Technical support and application tips</li>
+                                <li>Project estimates and quotes</li>
+                                <li>Product information and comparisons</li>
+                            </ul>
+                            How can I assist you with your painting project today?
+                        </div>
+                    `;
+                    chatHistory = [];
+                    userName = '';
+                    userProject = '';
+                    isFirstInteraction = true;
+                    updateChatbotStatus('Online • Chat cleared');
+                }
+            });
+            
+            // Save chat button
+            saveChatBtn.addEventListener('click', function() {
+                const chatContent = chatMessages.innerText;
+                const blob = new Blob([chatContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `serberlin-chat-${new Date().toISOString().slice(0,10)}.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                // Show confirmation
+                const confirmation = document.createElement('div');
+                confirmation.className = 'message message-bot';
+                confirmation.textContent = 'Chat saved successfully! 📁';
+                chatMessages.appendChild(confirmation);
+                scrollToBottom();
+            });
+            
+            // Contact expert button
+            contactExpertBtn.addEventListener('click', function() {
+                const message = `I'd like to speak with a human paint expert.`;
+                addMessage(message, 'user');
+                
+                setTimeout(() => {
+                    addMessage(`Perfect! I'll connect you with one of our paint experts. In the meantime, you can:\n\n1. Call us directly: 08034946003\n2. Email: info@serberlin.com\n3. Visit our showroom\n\nOur experts are available Monday-Friday, 9AM-6PM. Would you like me to schedule a callback?`, 'bot');
+                }, 1000);
+            });
+            
+            // Auto-open chatbot on page load after 8 seconds
             setTimeout(() => {
                 if (!chatbotWindow.classList.contains('active')) {
                     chatbotWindow.classList.add('active');
                     setTimeout(() => {
                         chatInput.focus();
+                        updateChatbotStatus('Online • Welcome!');
+                        
+                        // Auto greeting after opening
+                        setTimeout(() => {
+                            if (chatHistory.length === 0) {
+                                const greeting = getRandomResponse(knowledgeBase.greetings);
+                                addMessage(greeting, 'bot');
+                                chatHistory.push({ type: 'bot', content: greeting });
+                            }
+                        }, 500);
                     }, 300);
                 }
-            }, 10000);
+            }, 8000);
+            
+            // Periodically update status
+            setInterval(() => {
+                if (chatbotWindow.classList.contains('active')) {
+                    const statuses = [
+                        'Online • Ready to help',
+                        'Online • Ask me anything about paint!',
+                        'Online • Your paint expert',
+                        'Online • Color consultant available'
+                    ];
+                    const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+                    updateChatbotStatus(randomStatus);
+                }
+            }, 30000);
         });
     </script>
 
