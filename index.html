@@ -438,7 +438,7 @@
             color: #4a5568 !important;
         }
         
-        /* Sam the Painter Chatbot Styles - ENHANCED */
+        /* Simplified Chatbot Styles */
         .chatbot-container {
             position: fixed;
             bottom: 20px;
@@ -461,7 +461,6 @@
             justify-content: center;
             font-size: 28px;
             transition: all 0.3s ease;
-            position: relative;
         }
         
         .chatbot-toggle:hover {
@@ -469,36 +468,19 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
         
-        .chatbot-toggle::after {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border-radius: 50%;
-            border: 2px solid #FFD700;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.2); opacity: 0; }
-        }
-        
         .chatbot-window {
             position: absolute;
             bottom: 70px;
             right: 0;
-            width: 380px;
-            height: 550px;
+            width: 350px;
+            height: 450px;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             display: none;
             flex-direction: column;
             overflow: hidden;
-            border: 2px solid #FFD700;
+            border: 1px solid #e9ecef;
         }
         
         .chatbot-window.active {
@@ -512,13 +494,13 @@
         }
         
         .chatbot-header {
-            background: linear-gradient(to right, #111827, #2c3038);
+            background: #111827;
             color: white;
             padding: 15px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid #FFD700;
+            border-bottom: 1px solid #e9ecef;
         }
         
         .chatbot-title {
@@ -529,21 +511,8 @@
         
         .chatbot-title h3 {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #FFD700;
-        }
-        
-        .chatbot-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #FFD700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #111827;
-            font-weight: bold;
         }
         
         .chatbot-close {
@@ -552,27 +521,22 @@
             color: white;
             font-size: 20px;
             cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .chatbot-close:hover {
-            color: #FFD700;
         }
         
         .chatbot-messages {
             flex: 1;
-            padding: 20px;
+            padding: 15px;
             overflow-y: auto;
             background: #f8f9fa;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
         
         .message {
             max-width: 85%;
-            padding: 12px 16px;
-            border-radius: 18px;
+            padding: 10px 14px;
+            border-radius: 12px;
             line-height: 1.4;
             font-size: 14px;
             word-wrap: break-word;
@@ -580,23 +544,19 @@
         
         .message-bot {
             background: white;
-            border: 1px solid #e9ecef;
             align-self: flex-start;
-            border-bottom-left-radius: 5px;
+            border: 1px solid #e9ecef;
             color: #333;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .message-user {
-            background: linear-gradient(135deg, #111827, #2c3038);
+            background: #111827;
             color: white;
             align-self: flex-end;
-            border-bottom-right-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .chatbot-input {
-            padding: 15px 20px;
+            padding: 15px;
             border-top: 1px solid #e9ecef;
             background: white;
             display: flex;
@@ -605,80 +565,47 @@
         
         .chatbot-input input {
             flex: 1;
-            padding: 12px 15px;
+            padding: 10px 15px;
             border: 1px solid #ddd;
-            border-radius: 25px;
+            border-radius: 20px;
             font-size: 14px;
             outline: none;
-            transition: border 0.3s;
         }
         
         .chatbot-input input:focus {
             border-color: #FFD700;
-            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
         }
         
         .chatbot-input button {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: #111827;
             color: #FFD700;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .chatbot-input button:hover {
             background: #FFD700;
             color: #111827;
-            transform: scale(1.05);
-        }
-        
-        .quick-options {
-            padding: 10px 20px;
-            background: white;
-            border-top: 1px solid #e9ecef;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .quick-option {
-            padding: 8px 12px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 20px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: #333;
-        }
-        
-        .quick-option:hover {
-            background: #FFD700;
-            color: #111827;
-            border-color: #FFD700;
         }
         
         .typing-indicator {
             display: flex;
             align-items: center;
             gap: 5px;
-            padding: 10px 15px;
+            padding: 8px 12px;
             background: white;
             border: 1px solid #e9ecef;
-            border-radius: 18px;
+            border-radius: 12px;
             align-self: flex-start;
             width: fit-content;
         }
         
         .typing-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: #999;
             border-radius: 50%;
             animation: typing 1.4s infinite;
@@ -689,119 +616,7 @@
         
         @keyframes typing {
             0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-5px); }
-        }
-        
-        /* Chatbot Enhanced Features */
-        .message-bot.suggestion {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-left: 4px solid #FFD700;
-        }
-        
-        .chatbot-suggestions {
-            padding: 10px 20px;
-            background: #f8f9fa;
-            border-top: 1px solid #e9ecef;
-        }
-        
-        .suggestion-title {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .suggestion-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .suggestion-btn {
-            padding: 6px 12px;
-            background: white;
-            border: 1px solid #e9ecef;
-            border-radius: 16px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: #333;
-        }
-        
-        .suggestion-btn:hover {
-            background: #FFD700;
-            border-color: #FFD700;
-            color: #111827;
-        }
-        
-        .chatbot-actions {
-            display: flex;
-            gap: 10px;
-            padding: 10px 20px;
-            background: white;
-            border-top: 1px solid #e9ecef;
-        }
-        
-        .chatbot-action-btn {
-            flex: 1;
-            padding: 8px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 6px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-        
-        .chatbot-action-btn:hover {
-            background: #FFD700;
-            border-color: #FFD700;
-            color: #111827;
-        }
-        
-        /* Chatbot typing animation */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .typing-text::after {
-            content: '...';
-            animation: blink 1.4s infinite;
-        }
-        
-        /* Enhanced message styling */
-        .message-bot h4 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            color: #111827;
-            font-size: 14px;
-        }
-        
-        .message-bot ul, .message-bot ol {
-            margin: 8px 0;
-            padding-left: 20px;
-        }
-        
-        .message-bot li {
-            margin-bottom: 4px;
-        }
-        
-        .message-bot strong {
-            color: #111827;
-        }
-        
-        .chatbot-status {
-            font-size: 11px;
-            color: #666;
-            text-align: center;
-            padding: 5px;
-            background: #f8f9fa;
+            30% { transform: translateY(-3px); }
         }
         
         @media (max-width: 991px) {
@@ -886,8 +701,8 @@
             
             /* Chatbot responsive */
             .chatbot-window {
-                width: 340px;
-                height: 500px;
+                width: 320px;
+                height: 400px;
             }
             
             .chatbot-container {
@@ -1035,15 +850,15 @@
             
             /* Chatbot responsive */
             .chatbot-window {
-                width: 320px;
-                height: 450px;
+                width: 300px;
+                height: 380px;
                 right: 10px;
             }
             
             .chatbot-toggle {
-                width: 55px;
-                height: 55px;
-                font-size: 24px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
             }
         }
         
@@ -1125,36 +940,18 @@
             
             /* Chatbot for small screens */
             .chatbot-window {
-                width: 300px;
-                height: 420px;
+                width: 280px;
+                height: 350px;
                 bottom: 65px;
             }
             
             .chatbot-messages {
-                padding: 15px;
+                padding: 12px;
             }
             
             .message {
                 font-size: 13px;
-                padding: 10px 14px;
-            }
-            
-            .quick-options {
-                padding: 8px 15px;
-            }
-            
-            .quick-option {
-                font-size: 11px;
-                padding: 6px 10px;
-            }
-            
-            .suggestion-buttons {
-                gap: 6px;
-            }
-            
-            .suggestion-btn {
-                font-size: 11px;
-                padding: 5px 8px;
+                padding: 8px 12px;
             }
         }
         
@@ -1979,67 +1776,24 @@
         </div>
     </footer>
 
-    <!-- Sam the Painter Chatbot - ENHANCED VERSION -->
+    <!-- Simplified Chatbot -->
     <div class="chatbot-container">
         <div class="chatbot-window">
             <div class="chatbot-header">
                 <div class="chatbot-title">
-                    <div class="chatbot-avatar">S</div>
-                    <h3>Sam The Painter 👨🏽‍🎨</h3>
+                    <h3>Paint Assistant</h3>
                 </div>
                 <button class="chatbot-close">&times;</button>
             </div>
             
-            <div class="chatbot-status">
-                <span id="chatbotStatus">Online • Ready to help</span>
-            </div>
-            
             <div class="chatbot-messages" id="chatMessages">
                 <div class="message message-bot">
-                    <h4>Hello! I'm Sam, Your Paint Expert 🎨</h4>
-                    Welcome to Serberlin Global Services! I'm here to help you with:
-                    <ul>
-                        <li>Color selection and matching</li>
-                        <li>Paint type recommendations</li>
-                        <li>Technical support and application tips</li>
-                        <li>Project estimates and quotes</li>
-                        <li>Product information and comparisons</li>
-                    </ul>
-                    How can I assist you with your painting project today?
+                    Hi! I'm your paint assistant. Ask me about colors, paints, or your project!
                 </div>
-            </div>
-            
-            <div class="chatbot-suggestions">
-                <div class="suggestion-title">Quick Suggestions:</div>
-                <div class="suggestion-buttons">
-                    <button class="suggestion-btn" data-query="best paint for kitchen">Kitchen Paint</button>
-                    <button class="suggestion-btn" data-query="exterior paint recommendations">Exterior Paint</button>
-                    <button class="suggestion-btn" data-query="color trends 2024">2024 Trends</button>
-                    <button class="suggestion-btn" data-query="how to calculate paint quantity">Calculate Paint</button>
-                </div>
-            </div>
-            
-            <div class="chatbot-actions">
-                <button class="chatbot-action-btn" id="clearChat">
-                    <i class="fas fa-trash-alt"></i> Clear Chat
-                </button>
-                <button class="chatbot-action-btn" id="saveChat">
-                    <i class="fas fa-save"></i> Save Chat
-                </button>
-                <button class="chatbot-action-btn" id="contactExpert">
-                    <i class="fas fa-user-tie"></i> Live Expert
-                </button>
-            </div>
-            
-            <div class="quick-options">
-                <button class="quick-option" data-query="color selection">🎨 Color Selection</button>
-                <button class="quick-option" data-query="paint types">🖌️ Paint Types</button>
-                <button class="quick-option" data-query="pricing">💰 Pricing</button>
-                <button class="quick-option" data-query="technical support">🔧 Tech Support</button>
             </div>
             
             <div class="chatbot-input">
-                <input type="text" id="chatInput" placeholder="Ask about colors, paints, or your project...">
+                <input type="text" id="chatInput" placeholder="Type your question...">
                 <button id="sendMessage">
                     <i class="fas fa-paper-plane"></i>
                 </button>
@@ -2186,7 +1940,7 @@
         });
     </script>
 
-    <!-- Enhanced Sam the Painter Chatbot Script -->
+    <!-- Simplified Intelligent Chatbot Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // DOM Elements
@@ -2196,448 +1950,113 @@
             const chatMessages = document.getElementById('chatMessages');
             const chatInput = document.getElementById('chatInput');
             const sendMessageBtn = document.getElementById('sendMessage');
-            const quickOptions = document.querySelectorAll('.quick-option');
-            const suggestionBtns = document.querySelectorAll('.suggestion-btn');
-            const clearChatBtn = document.getElementById('clearChat');
-            const saveChatBtn = document.getElementById('saveChat');
-            const contactExpertBtn = document.getElementById('contactExpert');
-            const chatbotStatus = document.getElementById('chatbotStatus');
             
-            // Chat state
-            let chatHistory = [];
-            let userName = '';
-            let userProject = '';
-            let isFirstInteraction = true;
-            
-            // Enhanced Knowledge Base for Intelligent Responses
+            // Intelligent knowledge base
             const knowledgeBase = {
                 greetings: [
-                    "Hello! I'm Sam, your paint expert at Serberlin Global Services. How can I assist you today?",
-                    "Hi there! Ready to help with all your painting needs. What can I do for you?",
-                    "Welcome! I'm Sam, your virtual paint consultant. How can I make your painting project easier?"
+                    "Hello! I'm your paint assistant. How can I help you today?",
+                    "Hi there! Ready to help with your painting questions.",
+                    "Welcome! I'm here to assist with all your paint needs."
                 ],
                 
-                "best paint for kitchen": {
-                    response: `For kitchens, I recommend our **Serberlin KitchenGuard Premium** line. Here's why:
-
-**Key Features:**
-• **Moisture Resistance:** Formulated to withstand steam and humidity
-• **Easy Cleaning:** Wipe clean with mild detergent
-• **Mold & Mildew Protection:** Built-in inhibitors
-• **Stain Resistance:** Repels cooking oils and food spills
-• **Durability:** Withstands frequent cleaning
-
-**Recommended Finish:** Semi-gloss or satin
-**Coverage:** 350-400 sq ft per gallon
-**Drying Time:** 2 hours touch dry, 4 hours recoat
-
-Would you like specific color recommendations for kitchens?`,
-                    followUp: "Tell me about your kitchen's lighting and style for personalized suggestions!"
-                },
-                
-                "exterior paint recommendations": {
-                    response: `For exterior projects, our **Serberlin WeatherShield Pro** is the top choice:
-
-**Benefits:**
-• **UV Protection:** Resists fading from sunlight
-• **Weather Resistance:** Withstands rain, snow, and temperature changes
-• **Flexibility:** Expands/contracts with temperature changes
-• **Mildew Resistance:** Prevents mold growth
-• **Longevity:** 10-15 year durability guarantee
-
-**Application Tips:**
-1. Surface prep is crucial - clean and prime
-2. Apply in 50-90°F weather
-3. Avoid painting in direct sunlight
-4. Use two coats for best protection
-
-What type of exterior surface are you painting?`,
-                    followUp: "Share your surface type (wood, stucco, brick, etc.) for specific advice!"
-                },
-                
-                "color trends 2024": {
-                    response: `**2024 Color Trends from Serberlin Global Services:**
-
-**Top Color Families:**
-1. **Earthy Neutrals:** Warm beiges, terracotta, olive greens
-2. **Sky Blues:** Soft, calming blues inspired by nature
-3. **Rich Jewel Tones:** Emerald green, sapphire blue, amethyst
-4. **Warm Whites:** Creamy, inviting whites with undertones
-5. **Muted Pastels:** Soft lavender, blush pink, sage green
-
-**Popular Combinations:**
-• **Coastal Calm:** Sky blue + warm white + sandy beige
-• **Modern Earth:** Terracotta + olive green + charcoal
-• **Jewel Box:** Emerald green + brass accents + warm wood
-
-**Pro Tip:** Consider your room's lighting and purpose when choosing colors!`,
-                    followUp: "Which room are you planning to paint? I can suggest trending colors specifically for that space!"
-                },
-                
-                "how to calculate paint quantity": {
-                    response: `**Paint Calculator Guide:**
-
-**Step-by-Step Calculation:**
-1. **Measure Walls:** (Length + Width) × 2 × Height = Total wall area
-2. **Subtract Openings:** Deduct windows and doors (typically 20 sq ft each)
-3. **Consider Coverage:** Our paints cover 350-400 sq ft per gallon
-4. **Account for Coats:** Multiply by number of coats (usually 2)
-
-**Example:**
-• Room: 12ft × 15ft with 8ft ceilings
-• Wall area: (12+15)×2×8 = 432 sq ft
-• Subtract openings: 432 - 40 = 392 sq ft
-• For 2 coats: 392 × 2 = 784 sq ft
-• Paint needed: 784 ÷ 350 = 2.24 gallons → **3 gallons**
-
-Want me to calculate for your specific room dimensions?`,
-                    followUp: "Share your room measurements and I'll calculate exactly how much paint you need!"
-                },
-                
                 "color selection": {
-                    response: `**Color Selection Guide:**
-
-**Consider These Factors:**
-1. **Room Purpose:**
-   • Bedrooms: Calming colors (blues, greens, neutrals)
-   • Kitchens: Clean, bright colors (whites, yellows, light blues)
-   • Offices: Focus-enhancing colors (greens, grays, blues)
-
-2. **Lighting Conditions:**
-   • North-facing rooms: Warm colors to add warmth
-   • South-facing rooms: Cool colors to balance brightness
-   • Artificial light: Test colors under your actual lighting
-
-3. **Room Size:**
-   • Small rooms: Light colors to create space
-   • Large rooms: Darker colors for coziness
-
-4. **Color Psychology:**
-   • Blue: Calm, peaceful
-   • Green: Balanced, natural
-   • Yellow: Energetic, cheerful
-   • Gray: Sophisticated, neutral
-
-**Pro Tip:** Get sample pots and test on your walls first!`,
-                    followUp: "Tell me about your room and I'll suggest specific colors!"
+                    response: "Choosing colors depends on your room's purpose and lighting. For bedrooms, calming colors like blues and greens work well. For kitchens, bright whites or light blues are great. Want suggestions for a specific room?"
                 },
                 
                 "paint types": {
-                    response: `**Serberlin Paint Types Guide:**
-
-**Interior Paints:**
-1. **Matte/Flat:** Non-reflective, hides imperfections
-   • Best for: Ceilings, low-traffic areas
-   • Coverage: 400 sq ft/gal
-
-2. **Eggshell:** Low sheen, slight reflectivity
-   • Best for: Living rooms, bedrooms
-   • Durability: Good
-
-3. **Satin:** Soft sheen, washable
-   • Best for: Kitchens, bathrooms, hallways
-   • Durability: Excellent
-
-4. **Semi-Gloss:** Reflective, very durable
-   • Best for: Trim, doors, cabinets
-   • Durability: Superior
-
-5. **High-Gloss:** Maximum shine
-   • Best for: Furniture, accent pieces
-   • Durability: Premium
-
-**Specialty Paints:**
-• **Kitchen & Bath:** Mold/mildew resistant
-• **Ceiling Paint:** Splatter-resistant formula
-• **Trim Paint:** Smooth application, quick drying`,
-                    followUp: "What surface are you painting? I'll recommend the perfect paint type!"
+                    response: "We have several types: Matte (good for ceilings), Eggshell (living rooms), Satin (kitchens/bathrooms), Semi-Gloss (doors/trim), and High-Gloss (furniture). Which surface are you painting?"
                 },
                 
                 "pricing": {
-                    response: `**Serberlin Pricing Structure:**
-
-**Product Lines:**
-1. **Essential Range:** $25-35/gallon
-   • Good coverage, basic colors
-   • 5-year durability guarantee
-
-2. **Premium Range:** $35-50/gallon
-   • Excellent coverage, full color palette
-   • 10-year durability guarantee
-   • Low-VOC options available
-
-3. **Professional Range:** $50-75/gallon
-   • Superior coverage and durability
-   • Custom color matching included
-   • Zero-VOC, eco-friendly options
-   • 15-year durability guarantee
-
-**Factors Affecting Price:**
-• Paint type (interior/exterior/specialty)
-• Finish (matte/satin/gloss)
-• Color (custom vs. standard)
-• Quantity (bulk discounts available)
-
-**Free Services:**
-• Color consultation
-• Sample pots (small fee)
-• Technical support
-• Application guidance`,
-                    followUp: "Tell me about your project for a more accurate estimate!"
+                    response: "Prices range from $25-75 per gallon depending on quality. Our Essential range starts at $25, Premium at $35, and Professional at $50. Need a specific quote?"
                 },
                 
                 "technical support": {
-                    response: `**Technical Support Solutions:**
-
-**Common Issues & Solutions:**
-
-**1. Paint Won't Stick:**
-• Cause: Greasy or dirty surface
-• Solution: Clean with TSP, rinse, dry, then prime
-
-**2. Brush Marks Visible:**
-• Cause: Poor quality brush or thick application
-• Solution: Use high-quality brush, apply thinner coats
-
-**3. Paint Peeling:**
-• Cause: Moisture or poor surface prep
-• Solution: Remove loose paint, dry surface, prime, repaint
-
-**4. Color Looks Different:**
-• Cause: Lighting changes or undertones
-• Solution: Test colors first, consider primer color
-
-**5. Drying Too Fast/Slow:**
-• Cause: Temperature/humidity issues
-• Solution: Paint in 50-90°F, 40-70% humidity
-
-**Application Tips:**
-• Always use primer on new surfaces
-• Stir paint thoroughly before use
-• Maintain wet edge while painting
-• Allow proper drying time between coats`,
-                    followUp: "What specific issue are you experiencing? I'll provide detailed troubleshooting!"
+                    response: "For technical issues: 1) Clean surfaces before painting 2) Use primer on new surfaces 3) Apply thin coats 4) Allow proper drying time. What specific issue are you having?"
                 },
                 
-                "custom color matching": {
-                    response: `**Custom Color Matching Service:**
-
-**How It Works:**
-1. **Bring Sample:** Fabric, photo, or existing paint chip
-2. **Digital Analysis:** Our scanner creates precise formula
-3. **Test Sample:** Small batch for verification
-4. **Adjustment:** Fine-tune if needed
-5. **Final Mix:** Your custom color created
-
-**Turnaround Time:**
-• Standard: 24-48 hours
-• Rush: Same day (additional fee)
-
-**Minimum Order:**
-• Interior: 1 gallon
-• Exterior: 5 gallons
-
-**Color Documentation:**
-We provide a custom color card with your formula for future reference.
-
-**Price:**
-• $15 matching fee (waived with 5+ gallon order)
-• Paint priced at premium range rate`,
-                    followUp: "What color would you like us to match? Bring your sample to our nearest location!"
+                "delivery": {
+                    response: "Local delivery: 2-3 business days ($15). Express: next day ($25). Free shipping on orders over $200. What's your location?"
                 },
                 
-                "eco friendly options": {
-                    response: `**Eco-Friendly Paint Options:**
-
-**Serberlin EcoChoice Range:**
-• **Zero-VOC:** No volatile organic compounds
-• **Low-VOC:** Minimal emissions
-• **Natural Ingredients:** Plant-based binders
-• **Recycled Packaging:** 30% post-consumer recycled plastic
-• **Water-Based:** Easy cleanup, less environmental impact
-
-**Certifications:**
-• Green Seal Certified
-• LEED Compliant
-• Indoor Air Quality Certified
-
-**Performance:**
-• Same coverage and durability as traditional paints
-• Quick drying (1-2 hours)
-• Low odor during application
-• Available in all sheens and colors
-
-**Price Premium:**
-• 10-15% more than standard paints
-• Often eligible for green building credits`,
-                    followUp: "Are you looking for interior or exterior eco-friendly paints?"
+                "warranty": {
+                    response: "Our paints come with 5-15 year warranties: Essential (5 years), Premium (10 years), Professional (15 years). All cover fading and peeling when applied correctly."
                 },
                 
-                "delivery and shipping": {
-                    response: `**Delivery & Shipping Options:**
-
-**Local Delivery (within 50 miles):**
-• **Standard:** 2-3 business days - $15
-• **Express:** Next business day - $25
-• **Same Day:** By 5 PM - $35 (order by 12 PM)
-
-**Nationwide Shipping:**
-• **Ground:** 5-7 business days
-• **Expedited:** 2-3 business days
-• **Freight:** For bulk orders (5+ gallons)
-
-**Free Shipping:**
-• Orders over $200
-• Professional contractor accounts
-• Repeat customers (after 3 orders)
-
-**Order Processing:**
-• In-stock items: Ships within 24 hours
-• Custom colors: 48 hours processing
-• Large orders: Contact for freight quote
-
-**Tracking:**
-All orders include real-time tracking and delivery updates.`,
-                    followUp: "What's your location? I can check specific delivery options for you!"
+                "kitchen paint": {
+                    response: "For kitchens, I recommend our KitchenGuard Premium. It's moisture-resistant, easy to clean, and mold-resistant. Semi-gloss or satin finishes work best."
                 },
                 
-                "warranty and guarantees": {
-                    response: `**Serberlin Guarantees:**
-
-**Product Warranty:**
-1. **Essential Range:** 5-year durability guarantee
-2. **Premium Range:** 10-year durability guarantee
-3. **Professional Range:** 15-year durability guarantee
-
-**Coverage Includes:**
-• Fading resistance
-• Peeling/flaking prevention
-• Mildew resistance (where applicable)
-• Color consistency
-
-**Requirements for Coverage:**
-• Proper surface preparation
-• Correct application per instructions
-• Use of recommended primers
-• Suitable environmental conditions
-
-**Satisfaction Guarantee:**
-• 30-day return policy (unused paint)
-• Color adjustment service
-• Technical support for application issues
-
-**How to Make a Claim:**
-1. Contact customer service
-2. Provide purchase details
-3. Photos of the issue
-4. Our team will assess and resolve`,
-                    followUp: "Do you have a specific warranty question or concern?"
+                "bathroom paint": {
+                    response: "Bathrooms need mold-resistant paint. Our BathroomPro line is specially formulated for high-humidity areas. Satin finish is recommended."
                 },
                 
-                fallback: {
-                    response: `I understand you're asking about something specific. While I'm trained primarily on paint-related topics, I can help you with:
-
-**Paint-Specific Questions:**
-• Color selection and matching
-• Paint type recommendations
-• Application techniques
-• Troubleshooting painting issues
-• Product specifications and comparisons
-• Project planning and estimates
-
-**Related Topics I Can Discuss:**
-• Surface preparation
-• Tool selection (brushes, rollers)
-• Safety precautions
-• Cleanup and disposal
-• Maintenance tips
-
-**If I Can't Answer:**
-I'll connect you with one of our human paint experts who can provide more detailed assistance.
-
-What paint-related question can I help you with today?`,
-                    followUp: "Try asking about colors, paints, or your specific painting project!"
-                }
+                "exterior paint": {
+                    response: "For exterior use, our WeatherShield Pro provides UV protection and weather resistance. It lasts 10-15 years and comes in various finishes."
+                },
+                
+                "how much paint": {
+                    response: "One gallon covers about 350-400 sq ft. Measure your room: (Length + Width) × 2 × Height = total area. Subtract windows/doors. Need help calculating?"
+                },
+                
+                "color matching": {
+                    response: "Yes! We can match any color. Bring a sample (fabric, photo, or paint chip). Custom matching takes 1-2 days with a small fee."
+                },
+                
+                "eco friendly": {
+                    response: "We offer Zero-VOC and Low-VOC options in our EcoChoice range. They're water-based, low-odor, and available in all colors."
+                },
+                
+                "application tips": {
+                    response: "Tips: 1) Clean walls first 2) Use quality brushes/rollers 3) Apply primer on new surfaces 4) Paint in 50-90°F weather 5) Allow 4 hours between coats"
+                },
+                
+                fallback: "I can help with paint selection, colors, pricing, technical questions, and application advice. What would you like to know about?"
             };
             
-            // Context-aware response generator
-            function generateIntelligentResponse(userInput, context = {}) {
-                const input = userInput.toLowerCase().trim();
+            // Generate intelligent response
+            function getResponse(input) {
+                const query = input.toLowerCase();
                 
                 // Check for greetings
-                if (input.match(/\b(hello|hi|hey|greetings|good morning|good afternoon)\b/)) {
-                    return getRandomResponse(knowledgeBase.greetings);
+                if (query.match(/\b(hello|hi|hey|greetings)\b/)) {
+                    return knowledgeBase.greetings[Math.floor(Math.random() * knowledgeBase.greetings.length)];
                 }
                 
                 // Check for thank you
-                if (input.match(/\b(thanks|thank you|appreciate it|much appreciated)\b/)) {
-                    return "You're very welcome! 😊 Is there anything else I can help you with regarding your painting project?";
+                if (query.match(/\b(thanks|thank you|thankyou)\b/)) {
+                    return "You're welcome! Is there anything else I can help with?";
                 }
                 
                 // Check for goodbye
-                if (input.match(/\b(bye|goodbye|see you|talk later|gotta go)\b/)) {
-                    return "Thanks for chatting! Remember, I'm here whenever you need paint advice. Have a colorful day! 🎨";
-                }
-                
-                // Check for name introduction
-                if (input.match(/\b(my name is|i am|i'm called|call me)\b/)) {
-                    const nameMatch = input.match(/\b(my name is|i am|i'm called|call me)\s+([a-zA-Z]+)/);
-                    if (nameMatch && nameMatch[2]) {
-                        userName = nameMatch[2];
-                        return `Nice to meet you, ${userName}! I'm Sam, your paint expert. How can I help you with your painting project today?`;
-                    }
-                }
-                
-                // Check for project description
-                if (input.match(/\b(painting|project|renovating|redecorating)\b/)) {
-                    userProject = input;
-                    return `I understand you're working on a painting project. That's exciting! 🎨 Could you tell me more about what you're planning to paint? (e.g., living room, kitchen exterior, furniture, etc.)`;
+                if (query.match(/\b(bye|goodbye|see you|exit)\b/)) {
+                    return "Goodbye! Visit our shop or call 08034946003 for more help.";
                 }
                 
                 // Intelligent topic matching
                 const topics = {
-                    'kitchen': 'best paint for kitchen',
-                    'exterior|outside|outdoor': 'exterior paint recommendations',
-                    'trend|fashion|latest|2024': 'color trends 2024',
-                    'calculate|quantity|how much|gallons': 'how to calculate paint quantity',
-                    'color|colour|shade|hue|tint': 'color selection',
+                    'color|colour|shade|hue': 'color selection',
                     'type|finish|matte|gloss|satin': 'paint types',
-                    'price|cost|quote|estimate|expensive': 'pricing',
-                    'problem|issue|trouble|technical|help': 'technical support',
-                    'match|custom|special|unique': 'custom color matching',
-                    'eco|green|environment|natural|sustainable': 'eco friendly options',
-                    'deliver|ship|transport|order': 'delivery and shipping',
-                    'warranty|guarantee|return|refund': 'warranty and guarantees'
+                    'price|cost|quote|estimate': 'pricing',
+                    'problem|issue|technical|help': 'technical support',
+                    'deliver|ship|delivery|shipping': 'delivery',
+                    'warranty|guarantee|return': 'warranty',
+                    'kitchen': 'kitchen paint',
+                    'bathroom|bath': 'bathroom paint',
+                    'exterior|outside|outdoor': 'exterior paint',
+                    'how much|gallons|coverage|calculate': 'how much paint',
+                    'match|custom|special color': 'color matching',
+                    'eco|green|environment|natural': 'eco friendly',
+                    'apply|application|how to paint': 'application tips'
                 };
                 
                 for (const [pattern, topic] of Object.entries(topics)) {
-                    if (new RegExp(pattern, 'i').test(input)) {
-                        const topicData = knowledgeBase[topic];
-                        if (topicData) {
-                            // Add personalized touch if we have user info
-                            let response = topicData.response;
-                            if (userName) {
-                                response = `Hi ${userName}! ` + response;
-                            }
-                            if (userProject) {
-                                response += `\n\nBased on your project ("${userProject.substring(0, 50)}..."), I'd recommend...`;
-                            }
-                            return response;
-                        }
+                    if (new RegExp(pattern, 'i').test(query)) {
+                        return knowledgeBase[topic].response;
                     }
                 }
                 
-                // If no match found, use fallback with context
-                let fallback = knowledgeBase.fallback.response;
-                if (userName) {
-                    fallback = `Hi ${userName}! ` + fallback;
-                }
-                return fallback;
-            }
-            
-            // Helper function
-            function getRandomResponse(responses) {
-                return responses[Math.floor(Math.random() * responses.length)];
+                return knowledgeBase.fallback;
             }
             
             // Toggle chatbot window
@@ -2645,27 +2064,19 @@ What paint-related question can I help you with today?`,
                 chatbotWindow.classList.toggle('active');
                 if (chatbotWindow.classList.contains('active')) {
                     chatInput.focus();
-                    updateChatbotStatus('Online • Ready to help');
                 }
             });
             
             chatbotClose.addEventListener('click', function() {
                 chatbotWindow.classList.remove('active');
-                updateChatbotStatus('Online • Click to chat');
             });
             
             // Close chatbot when clicking outside
             document.addEventListener('click', function(event) {
                 if (!chatbotWindow.contains(event.target) && !chatbotToggle.contains(event.target)) {
                     chatbotWindow.classList.remove('active');
-                    updateChatbotStatus('Online • Click to chat');
                 }
             });
-            
-            // Update chatbot status
-            function updateChatbotStatus(status) {
-                chatbotStatus.textContent = status;
-            }
             
             // Send message function
             function sendMessage() {
@@ -2673,7 +2084,6 @@ What paint-related question can I help you with today?`,
                 if (message) {
                     // Add user message
                     addMessage(message, 'user');
-                    chatHistory.push({ type: 'user', content: message });
                     
                     // Clear input
                     chatInput.value = '';
@@ -2681,26 +2091,13 @@ What paint-related question can I help you with today?`,
                     // Show typing indicator
                     showTypingIndicator();
                     
-                    // Process and respond after delay
+                    // Generate and show response
                     setTimeout(() => {
                         removeTypingIndicator();
-                        const response = generateIntelligentResponse(message, {
-                            name: userName,
-                            project: userProject,
-                            history: chatHistory.slice(-5) // Last 5 messages for context
-                        });
-                        
+                        const response = getResponse(message);
                         addMessage(response, 'bot');
-                        chatHistory.push({ type: 'bot', content: response });
-                        
-                        // Add suggestions based on conversation
-                        if (isFirstInteraction) {
-                            addSuggestions();
-                            isFirstInteraction = false;
-                        }
-                        
                         scrollToBottom();
-                    }, 800 + Math.random() * 800); // Variable delay for natural feel
+                    }, 1000);
                 }
             }
             
@@ -2708,13 +2105,7 @@ What paint-related question can I help you with today?`,
             function addMessage(text, sender) {
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message message-${sender}`;
-                
-                // Format text with basic markdown
-                let formattedText = text
-                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                    .replace(/\n/g, '<br>');
-                
-                messageDiv.innerHTML = formattedText;
+                messageDiv.textContent = text;
                 chatMessages.appendChild(messageDiv);
                 scrollToBottom();
             }
@@ -2741,40 +2132,7 @@ What paint-related question can I help you with today?`,
                 }
             }
             
-            // Add contextual suggestions
-            function addSuggestions() {
-                const suggestions = [
-                    { text: "Get color samples", query: "how to get color samples" },
-                    { text: "Surface preparation", query: "how to prepare surfaces for painting" },
-                    { text: "Brush vs roller", query: "when to use brush vs roller" },
-                    { text: "Drying times", query: "how long does paint take to dry" }
-                ];
-                
-                const suggestionDiv = document.createElement('div');
-                suggestionDiv.className = 'message message-bot suggestion';
-                suggestionDiv.innerHTML = `
-                    <strong>Based on our conversation, you might also want to know:</strong><br>
-                    <div class="suggestion-buttons" style="margin-top: 10px;">
-                        ${suggestions.map(s => 
-                            `<button class="suggestion-btn" data-query="${s.query}">${s.text}</button>`
-                        ).join('')}
-                    </div>
-                `;
-                
-                chatMessages.appendChild(suggestionDiv);
-                scrollToBottom();
-                
-                // Add event listeners to new suggestion buttons
-                suggestionDiv.querySelectorAll('.suggestion-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const query = this.getAttribute('data-query');
-                        chatInput.value = query;
-                        sendMessage();
-                    });
-                });
-            }
-            
-            // Scroll to bottom of chat
+            // Scroll to bottom
             function scrollToBottom() {
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
@@ -2788,113 +2146,13 @@ What paint-related question can I help you with today?`,
                 }
             });
             
-            // Quick option buttons
-            quickOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const query = this.getAttribute('data-query');
-                    chatInput.value = query;
-                    sendMessage();
-                });
-            });
-            
-            // Suggestion buttons
-            suggestionBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const query = this.getAttribute('data-query');
-                    chatInput.value = query;
-                    sendMessage();
-                });
-            });
-            
-            // Clear chat button
-            clearChatBtn.addEventListener('click', function() {
-                if (confirm('Clear chat history?')) {
-                    chatMessages.innerHTML = `
-                        <div class="message message-bot">
-                            <h4>Hello! I'm Sam, Your Paint Expert 🎨</h4>
-                            Welcome to Serberlin Global Services! I'm here to help you with:
-                            <ul>
-                                <li>Color selection and matching</li>
-                                <li>Paint type recommendations</li>
-                                <li>Technical support and application tips</li>
-                                <li>Project estimates and quotes</li>
-                                <li>Product information and comparisons</li>
-                            </ul>
-                            How can I assist you with your painting project today?
-                        </div>
-                    `;
-                    chatHistory = [];
-                    userName = '';
-                    userProject = '';
-                    isFirstInteraction = true;
-                    updateChatbotStatus('Online • Chat cleared');
-                }
-            });
-            
-            // Save chat button
-            saveChatBtn.addEventListener('click', function() {
-                const chatContent = chatMessages.innerText;
-                const blob = new Blob([chatContent], { type: 'text/plain' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `serberlin-chat-${new Date().toISOString().slice(0,10)}.txt`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                
-                // Show confirmation
-                const confirmation = document.createElement('div');
-                confirmation.className = 'message message-bot';
-                confirmation.textContent = 'Chat saved successfully! 📁';
-                chatMessages.appendChild(confirmation);
-                scrollToBottom();
-            });
-            
-            // Contact expert button
-            contactExpertBtn.addEventListener('click', function() {
-                const message = `I'd like to speak with a human paint expert.`;
-                addMessage(message, 'user');
-                
-                setTimeout(() => {
-                    addMessage(`Perfect! I'll connect you with one of our paint experts. In the meantime, you can:\n\n1. Call us directly: 08034946003\n2. Email: info@serberlin.com\n3. Visit our showroom\n\nOur experts are available Monday-Friday, 9AM-6PM. Would you like me to schedule a callback?`, 'bot');
-                }, 1000);
-            });
-            
-            // Auto-open chatbot on page load after 8 seconds
+            // Auto-open after 5 seconds
             setTimeout(() => {
                 if (!chatbotWindow.classList.contains('active')) {
                     chatbotWindow.classList.add('active');
-                    setTimeout(() => {
-                        chatInput.focus();
-                        updateChatbotStatus('Online • Welcome!');
-                        
-                        // Auto greeting after opening
-                        setTimeout(() => {
-                            if (chatHistory.length === 0) {
-                                const greeting = getRandomResponse(knowledgeBase.greetings);
-                                addMessage(greeting, 'bot');
-                                chatHistory.push({ type: 'bot', content: greeting });
-                            }
-                        }, 500);
-                    }, 300);
+                    chatInput.focus();
                 }
-            }, 8000);
-            
-            // Periodically update status
-            setInterval(() => {
-                if (chatbotWindow.classList.contains('active')) {
-                    const statuses = [
-                        'Online • Ready to help',
-                        'Online • Ask me anything about paint!',
-                        'Online • Your paint expert',
-                        'Online • Color consultant available'
-                    ];
-                    const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-                    updateChatbotStatus(randomStatus);
-                }
-            }, 30000);
+            }, 5000);
         });
     </script>
 
